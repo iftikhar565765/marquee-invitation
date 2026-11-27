@@ -1,0 +1,195 @@
+/* ═══════════════════════════════════════════════════════════════
+   MARQUEE · rsvp.css — the reply card, written in gold on vellum
+   ═══════════════════════════════════════════════════════════════ */
+
+.rsvp-form {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.4rem;
+  text-align: left;
+}
+
+.field { display: grid; gap: .45rem; }
+
+.field > label,
+.field-legend {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: .66rem;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: var(--champagne-soft);
+}
+
+.field input[type="text"],
+.field input[type="number"],
+.field textarea {
+  width: 100%;
+  padding: .8rem .9rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--ink);
+  background: color-mix(in srgb, var(--paper-raised) 88%, white);
+  border: 1px solid color-mix(in srgb, var(--champagne-soft) 40%, transparent);
+  border-radius: 0;
+  transition: border-color .25s ease, box-shadow .25s ease;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: color-mix(in srgb, var(--ink-soft) 62%, transparent);
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--champagne);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--champagne) 42%, transparent);
+}
+
+.field.is-invalid input,
+.field.is-invalid textarea {
+  border-color: #A24E2E;
+  box-shadow: 0 0 0 1px color-mix(in srgb, #A24E2E 30%, transparent);
+}
+
+.field-error {
+  font-family: var(--font-ui);
+  font-size: .74rem;
+  letter-spacing: .04em;
+  color: #A24E2E;
+}
+
+.field--split input[type="number"] { max-width: 160px; }
+
+.choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem 1.6rem;
+  padding-block: .2rem;
+}
+
+.choice {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  cursor: pointer;
+  padding: .15rem 0;
+}
+
+.choice:hover .text { color: var(--ink); }
+
+.choice input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* the deco radio diamond */
+.choice .diamond {
+  width: 13px;
+  height: 13px;
+  rotate: 45deg;
+  border: 1.4px solid color-mix(in srgb, var(--champagne-soft) 70%, transparent);
+  transition: background-color .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+
+.choice .text {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--ink-soft);
+  transition: color .22s ease;
+}
+
+.choice:has(input:checked) .diamond {
+  border-color: var(--champagne);
+  background: color-mix(in srgb, var(--champagne) 82%, white);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--champagne) 22%, transparent);
+}
+
+.choice:has(input:checked) .text { color: var(--ink); }
+
+.choice:has(input:focus-visible) .diamond {
+  outline: 2px solid var(--champagne);
+  outline-offset: 3px;
+}
+
+.rsvp-actions {
+  display: grid;
+  justify-items: center;
+  gap: .9rem;
+  margin-top: .4rem;
+}
+
+.rsvp-note {
+  max-width: 42ch;
+  font-family: var(--font-body);
+  font-size: .82rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+.rsvp-note strong { color: var(--ink); font-weight: 600; }
+
+.rsvp-status {
+  font-family: var(--font-ui);
+  font-size: .8rem;
+  letter-spacing: .06em;
+  color: var(--champagne-soft);
+  min-height: 1.2em;
+}
+.rsvp-status.is-error { color: #A24E2E; }
+
+.rsvp-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.rsvp-preview { text-align: center; }
+
+.script-intro {
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  color: var(--champagne-soft);
+  margin-top: .4rem;
+}
+
+.rsvp-summary {
+  display: grid;
+  margin-top: 1.2rem;
+  text-align: left;
+}
+
+.rsvp-summary > div {
+  display: grid;
+  grid-template-columns: minmax(7.5rem, 11rem) 1fr;
+  gap: .8rem;
+  padding: .55rem .8rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--champagne-soft) 30%, transparent);
+}
+
+.rsvp-summary > div:nth-child(odd) {
+  background: color-mix(in srgb, var(--champagne) 7%, transparent);
+}
+
+.rsvp-summary > div:last-child { border-bottom: 0; }
+
+.rsvp-summary dt {
+  font-family: var(--font-ui);
+  font-size: .64rem;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--champagne-soft);
+  align-self: center;
+}
+
+.rsvp-summary dd {
+  font-family: var(--font-body);
+  font-size: .98rem;
+  color: var(--ink);
+  line-height: 1.6;
+}

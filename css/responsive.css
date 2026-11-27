@@ -1,0 +1,33 @@
+/* ═══════════════════════════════════════════════════════════════
+   MARQUEE · responsive.css — small screens, grand proportions
+   ═══════════════════════════════════════════════════════════════ */
+
+@media (max-width: 720px) {
+  .ballroom-card { padding-inline: clamp(1.2rem, 6vw, 2rem); }
+
+  .ballroom-card__date-row { gap: .8rem; }
+
+  .events { padding-inline-start: 2.1rem; }
+  .events::before { left: .85rem; }
+  .event__node { left: -1.55rem; }
+
+  .event__index {
+    position: static;
+    padding: 0;
+    margin-bottom: .2rem;
+    justify-self: start;
+  }
+  .event__name { padding-right: 0; }
+
+  .particulars-row { grid-template-columns: 1fr; }
+
+  .day-words { gap: 1.3rem 1.1rem; }
+  .day-words::before { display: none; }
+
+  .count-clock { gap: .6rem; }
+  .count-unit { min-width: 4.1rem; padding: .8rem .5rem; }
+
+  .venue-sublines { flex-direction: column; align-items: center; gap: .7rem; }
+
+  .story-captions { gap: 1.2rem; }
+}

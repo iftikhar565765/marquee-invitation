@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Limelight&family=Italiana&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    position: relative;
+    background:
+      radial-gradient(120% 90% at 50% -30%, #1A1C22 0%, transparent 55%),
+      linear-gradient(180deg, #0E0F12 0%, #0B0C0E 100%);
+    display: grid;
+    place-items: center;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+
+  .rays {
+    position: absolute;
+    left: 50%; top: 50%;
+    translate: -50% -50%;
+    width: 1000px; height: 1000px;
+    color: #CBA85C;
+    opacity: .32;
+    -webkit-mask-image: radial-gradient(closest-side, #000 26%, rgba(0,0,0,.5) 58%, transparent 84%);
+    mask-image: radial-gradient(closest-side, #000 26%, rgba(0,0,0,.5) 58%, transparent 84%);
+  }
+
+  .bracket { position: absolute; width: 130px; color: rgba(203, 168, 92, .55); }
+
+  .card {
+    position: relative;
+    width: 720px;
+    padding: 52px 56px 44px;
+    text-align: center;
+    background: linear-gradient(168deg, #F7F1E1 0%, #EFE7D2 100%);
+    box-shadow:
+      inset 0 0 0 1px rgba(156, 130, 72, .55),
+      inset 0 0 0 6px #F5EFDF,
+      inset 0 0 0 7px rgba(156, 130, 72, .42),
+      0 30px 80px -30px rgba(0, 0, 0, .8);
+  }
+
+  .eyebrow {
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: .42em;
+    text-indent: .42em;
+    text-transform: uppercase;
+    color: #9C8248;
+  }
+
+  .names {
+    margin-top: 20px;
+    font-family: 'Poiret One', serif;
+    font-size: 50px;
+    line-height: 1.08;
+    letter-spacing: .05em;
+    white-space: nowrap;
+    color: #1C1913;
+  }
+  .names .amp { font-family: 'Italiana', serif; font-size: 40px; color: #9C8248; padding-inline: 8px; }
+
+  .rule {
+    display: flex; align-items: center; gap: 12px;
+    width: 300px; margin: 22px auto 0;
+    color: #9C8248;
+  }
+  .rule i { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, #9C8248 30%, #9C8248 70%, transparent); }
+  .rule svg { width: 14px; height: 14px; }
+
+  .date {
+    margin-top: 18px;
+    font-family: 'Limelight', serif;
+    font-size: 38px;
+    letter-spacing: .08em;
+    background: linear-gradient(172deg, #F0D89A 8%, #CBA85C 52%, #8C6F3F 92%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .meta {
+    margin-top: 16px;
+    font-weight: 600;
+    font-size: 12.5px;
+    letter-spacing: .3em;
+    text-indent: .3em;
+    text-transform: uppercase;
+    color: #57503F;
+  }
+  .meta .tie {
+    display: block;
+    margin-top: 7px;
+    letter-spacing: .44em;
+    text-indent: .44em;
+    color: #9C8248;
+  }
+
+  .foot {
+    position: absolute;
+    bottom: 26px; left: 0; right: 0;
+    text-align: center;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: .5em;
+    text-indent: .5em;
+    text-transform: uppercase;
+    color: rgba(241, 234, 215, .62);
+  }
+</style>
+</head>
+<body>
+  <svg class="rays" viewBox="-510 -510 1020 1020" aria-hidden="true">
+    <g fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M0 0 L0 -500" />
+      <path d="M0 0 L0 -500" transform="rotate(15)" />
+      <path d="M0 0 L0 -500" transform="rotate(30)" stroke-opacity=".6" />
+      <path d="M0 0 L0 -500" transform="rotate(45)" />
+      <path d="M0 0 L0 -500" transform="rotate(60)" stroke-opacity=".6" />
+      <path d="M0 0 L0 -500" transform="rotate(75)" />
+      <path d="M0 0 L0 -500" transform="rotate(90)" />
+      <path d="M0 0 L0 -500" transform="rotate(105)" stroke-opacity=".6" />
+      <path d="M0 0 L0 -500" transform="rotate(120)" />
+      <path d="M0 0 L0 -500" transform="rotate(135)" stroke-opacity=".6" />
+      <path d="M0 0 L0 -500" transform="rotate(150)" />
+      <path d="M0 0 L0 -500" transform="rotate(165)" stroke-opacity=".6" />
+      <path d="M0 0 L0 -500" transform="rotate(180)" />
+      <path d="M0 0 L0 -500" transform="rotate(195)" stroke-opacity=".6" />
+      <path d="M0 0 L0 -500" transform="rotate(210)" />
+      <path d="M0 0 L0 -500" transform="rotate(225)" stroke-opacity=".6" />
+      <path d="M0 0 L0 -500" transform="rotate(240)" />
+      <path d="M0 0 L0 -500" transform="rotate(255)" stroke-opacity=".6" />
+      <path d="M0 0 L0 -500" transform="rotate(270)" />
+      <path d="M0 0 L0 -500" transform="rotate(285)" stroke-opacity=".6" />
+      <path d="M0 0 L0 -500" transform="rotate(300)" />
+      <path d="M0 0 L0 -500" transform="rotate(315)" stroke-opacity=".6" />
+      <path d="M0 0 L0 -500" transform="rotate(330)" />
+      <path d="M0 0 L0 -500" transform="rotate(345)" stroke-opacity=".6" />
+      <circle r="150" stroke-opacity=".5" />
+      <circle r="128" stroke-opacity=".3" />
+    </g>
+  </svg>
+
+  <svg class="bracket" style="top:28px;left:28px" viewBox="0 0 120 120" aria-hidden="true">
+    <g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 8 H64 M8 8 V64"/><path d="M20 20 H44 M20 20 V44" stroke-opacity=".55"/><circle cx="44" cy="44" r="2.6" fill="currentColor" stroke="none"/></g>
+  </svg>
+  <svg class="bracket" style="top:28px;right:28px" viewBox="0 0 120 120" aria-hidden="true">
+    <g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M112 8 H56 M112 8 V64"/><path d="M100 20 H76 M100 20 V44" stroke-opacity=".55"/><circle cx="76" cy="44" r="2.6" fill="currentColor" stroke="none"/></g>
+  </svg>
+  <svg class="bracket" style="bottom:28px;left:28px" viewBox="0 0 120 120" aria-hidden="true">
+    <g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 112 H64 M8 112 V56"/><path d="M20 100 H44 M20 100 V76" stroke-opacity=".55"/><circle cx="44" cy="76" r="2.6" fill="currentColor" stroke="none"/></g>
+  </svg>
+  <svg class="bracket" style="bottom:28px;right:28px" viewBox="0 0 120 120" aria-hidden="true">
+    <g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M112 112 H56 M112 112 V56"/><path d="M100 100 H76 M100 100 V76" stroke-opacity=".55"/><circle cx="76" cy="76" r="2.6" fill="currentColor" stroke="none"/></g>
+  </svg>
+
+  <div class="card">
+    <p class="eyebrow">You are invited to the wedding of</p>
+    <h1 class="names">Vivienne <span class="amp">&amp;</span> Alexander</h1>
+    <div class="rule">
+      <i></i>
+      <svg viewBox="0 0 26 26"><g fill="none" stroke="currentColor" stroke-width="1.4"><path d="M13 2.5 L23.5 13 L13 23.5 L2.5 13 Z"/><path d="M13 7 L19 13 L13 19 L7 13 Z" stroke-opacity=".55"/></g></svg>
+      <i></i>
+    </div>
+    <p class="date">25 · 09 · 2027</p>
+    <p class="meta">The Avalon Ballroom · Karachi<span class="tie">Black Tie &amp; Gold</span></p>
+  </div>
+
+  <p class="foot">An Art Deco Wedding</p>
+</body>
+</html>

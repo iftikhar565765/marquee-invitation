@@ -1,0 +1,1208 @@
+/* ═══════════════════════════════════════════════════════════════
+   MARQUEE · sections.css — the walk through the ballroom
+   ---------------------------------------------------------------
+   Ten scenes in polished onyx and champagne gold, each framed
+   like a deco marquee: stepped ziggurat brackets, gilded hair-
+   lines, diamond studs and vellum plates. Light comes from the
+   gold, never from the paper.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ═══ THE HERO — the onyx sky ═══════════════════════════════════ */
+
+.scene {
+  position: relative;
+  padding: var(--scene-pad-y) var(--scene-pad-x);
+  display: grid;
+  justify-items: center;
+}
+
+.scene--hero {
+  min-height: 100svh;
+  padding-block: clamp(4rem, 8vh, 6rem) clamp(2rem, 5vh, 3rem);
+  overflow: clip;
+}
+
+.onyx-sky {
+  position: relative;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  padding: clamp(1rem, 3vh, 2.4rem) 0 clamp(2rem, 5vh, 3.4rem);
+}
+
+/* the champagne sunburst radiating behind the card */
+.onyx-sky__sunburst {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  width: min(150vw, 74rem);
+  aspect-ratio: 1;
+  color: var(--champagne);
+  opacity: .34;
+  pointer-events: none;
+}
+.onyx-sky__sunburst .sunburst {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.onyx-sky__sunburst {
+  -webkit-mask-image: radial-gradient(closest-side, #000 34%, rgba(0, 0, 0, .55) 62%, transparent 88%);
+  mask-image: radial-gradient(closest-side, #000 34%, rgba(0, 0, 0, .55) 62%, transparent 88%);
+}
+
+/* the gilded fans at the sky's shoulders */
+.onyx-sky__fan {
+  position: absolute;
+  width: clamp(7rem, 16vw, 12rem);
+  color: color-mix(in srgb, var(--champagne) 72%, transparent);
+  opacity: .8;
+  pointer-events: none;
+  user-select: none;
+}
+.onyx-sky__fan--l { left: clamp(-1.4rem, 2vw, 4rem); bottom: 6%; }
+.onyx-sky__fan--r { right: clamp(-1.4rem, 2vw, 4rem); bottom: 6%; }
+
+/* ── the ballroom card — the invitation on vellum ───────────── */
+
+.ballroom-card {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 44rem);
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  padding: clamp(2.2rem, 6.5vh, 4.2rem) clamp(1.4rem, 4.5vw, 3.4rem) clamp(2rem, 6vh, 3.8rem);
+  background: linear-gradient(168deg,
+    color-mix(in srgb, var(--paper-raised) 99%, white) 0%,
+    color-mix(in srgb, var(--ivory) 82%, var(--parchment)) 100%);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--champagne-soft) 58%, transparent),
+    inset 0 0 0 6px color-mix(in srgb, var(--paper-raised) 96%, transparent),
+    inset 0 0 0 7px color-mix(in srgb, var(--champagne-soft) 44%, transparent),
+    var(--shadow-lift);
+}
+
+/* stepped deco shoulders on the card */
+.ballroom-card::before,
+.ballroom-card::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 1.5px solid color-mix(in srgb, var(--champagne) 60%, transparent);
+  pointer-events: none;
+}
+.ballroom-card::before {
+  top: 12px;
+  left: 12px;
+  border-right: 0;
+  border-bottom: 0;
+  box-shadow: inset 7px 0 0 -6px color-mix(in srgb, var(--champagne) 45%, transparent);
+}
+.ballroom-card::after {
+  bottom: 12px;
+  right: 12px;
+  border-left: 0;
+  border-top: 0;
+  box-shadow: inset -7px 0 0 -6px color-mix(in srgb, var(--champagne) 45%, transparent);
+}
+
+.ballroom-card__eyebrow { color: var(--champagne-soft); }
+
+.ballroom-card__invite {
+  max-width: 34ch;
+  margin-top: 1.1rem;
+  font-family: var(--font-body);
+  font-size: clamp(.92rem, 2vw, 1.05rem);
+  line-height: 1.9;
+  color: var(--ink-soft);
+}
+
+.ballroom-card__names {
+  margin-top: 1.3rem;
+  display: grid;
+  justify-items: center;
+  gap: .1rem;
+}
+
+.ballroom-card__name {
+  font-family: var(--font-editorial);
+  font-weight: 400;
+  font-size: clamp(2.6rem, 8.4vw, 4.6rem);
+  line-height: 1.06;
+  letter-spacing: .07em;
+  color: var(--ink);
+}
+
+.ballroom-card__and {
+  font-size: clamp(1.4rem, 3.4vw, 1.9rem);
+  letter-spacing: .1em;
+  color: var(--champagne-soft);
+}
+
+.deco-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: min(72%, 340px);
+  margin-top: 1.4rem;
+  color: var(--champagne-soft);
+}
+.deco-divider i {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--line-strong) 26%, var(--line-strong) 74%, transparent);
+}
+.deco-divider svg {
+  width: 15px;
+  height: 15px;
+  flex: none;
+}
+.deco-divider--end { margin-top: clamp(1rem, 4.5%, 1.6rem); }
+
+.ballroom-card__date { margin-top: 1.2rem; }
+
+.ballroom-card__date-week { color: var(--ink-soft); }
+
+.ballroom-card__date-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: clamp(.9rem, 3vw, 1.5rem);
+  margin-top: .5rem;
+}
+
+.ballroom-card__date-side { color: var(--champagne-soft); }
+
+.ballroom-card__date-num {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 7vw, 4rem);
+  line-height: 1;
+  position: relative;
+  top: .085em;
+}
+
+.ballroom-card__ceremony {
+  margin-top: 1.2rem;
+  color: var(--ink-soft);
+}
+.ballroom-card__ceremony-sep {
+  color: var(--gold-line);
+  letter-spacing: 0;
+  margin-inline: .05em;
+}
+
+.ballroom-card__venue {
+  margin-top: 1.4rem;
+  display: grid;
+  justify-items: center;
+  gap: .3rem;
+}
+
+.ballroom-card__venue-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--champagne-soft);
+}
+.ballroom-card__venue-label i {
+  width: 26px;
+  height: 1px;
+  background: var(--line-strong);
+}
+
+.ballroom-card__venue-name {
+  font-family: var(--font-script);
+  font-size: clamp(1.5rem, 3.6vw, 2rem);
+  letter-spacing: .06em;
+  color: var(--ink);
+}
+
+.ballroom-card__venue-address {
+  font-family: var(--font-body);
+  font-size: .88rem;
+  color: var(--ink-soft);
+}
+
+.ballroom-card__closing {
+  margin-top: 1.1rem;
+  font-size: clamp(1.2rem, 2.8vw, 1.5rem);
+  letter-spacing: .04em;
+  color: var(--champagne-soft);
+}
+
+/* the signboard beneath the hero */
+.hero-signboard {
+  position: relative;
+  z-index: 1;
+  margin-top: clamp(1.4rem, 4vh, 2.4rem);
+  display: grid;
+  justify-items: center;
+  gap: .9rem;
+}
+.hero-signboard__line { color: var(--gilding-soft); }
+
+.hero-scroll {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  color: var(--night-faint);
+}
+.hero-scroll__arrow {
+  width: 15px;
+  height: 15px;
+  animation: scroll-nudge 2.6s var(--ease) infinite;
+}
+@keyframes scroll-nudge {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(5px); }
+}
+
+/* ═══ THE CHRONICLE — story ═════════════════════════════════════ */
+
+.scene--story {
+  background:
+    radial-gradient(84% 55% at 50% 0%, color-mix(in srgb, var(--champagne) 4.5%, transparent) 0%, transparent 62%),
+    linear-gradient(180deg, var(--night-deep) 0%, var(--night) 18%, var(--night) 82%, var(--night-deep) 100%);
+}
+
+.scene-body {
+  position: relative;
+  width: min(100%, 62rem);
+  display: grid;
+  justify-items: center;
+}
+.scene-body--narrow { width: min(100%, 720px); }
+.scene-body > * + * { margin-top: clamp(1.1rem, 3vh, 1.7rem); }
+.scene-body > .display + .prose { margin-top: clamp(1.4rem, 3.4vh, 2rem); }
+
+.story-quote {
+  position: relative;
+  width: min(100%, 34rem);
+  padding: clamp(1.6rem, 4.5vw, 2.4rem) clamp(1.4rem, 4.5vw, 2.6rem);
+  text-align: center;
+  background: linear-gradient(168deg,
+    color-mix(in srgb, var(--paper-raised) 99%, white) 0%,
+    color-mix(in srgb, var(--ivory) 84%, var(--parchment)) 100%);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--champagne-soft) 52%, transparent),
+    inset 0 0 0 5px color-mix(in srgb, var(--paper-raised) 96%, transparent),
+    inset 0 0 0 6px color-mix(in srgb, var(--champagne-soft) 38%, transparent),
+    var(--shadow-soft);
+}
+.story-quote__rule { width: min(220px, 60%); height: 16px; margin-inline: auto; }
+.story-quote__text {
+  margin-top: 1rem;
+  font-family: var(--font-script);
+  font-size: clamp(1.25rem, 3.2vw, 1.7rem);
+  letter-spacing: .04em;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.story-quote__label {
+  margin-top: .9rem;
+  color: var(--ink-soft);
+  letter-spacing: .2em;
+  line-height: 1.9;
+}
+
+.story-note { margin-top: clamp(1.4rem, 3.6vh, 2rem); text-align: center; }
+.story-note-credit { display: block; font-size: .92em; opacity: .75; margin-top: .3rem; }
+
+.story-captions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(1.2rem, 4vw, 3rem);
+  margin-top: clamp(1.6rem, 4vh, 2.4rem);
+}
+.story-caption {
+  display: grid;
+  justify-items: center;
+  gap: .55rem;
+  color: color-mix(in srgb, var(--champagne) 70%, transparent);
+}
+.story-caption svg { width: 54px; height: 38px; }
+.story-caption span {
+  font-family: var(--font-ui);
+  font-size: .64rem;
+  font-weight: 600;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--night-faint);
+  max-width: 22ch;
+  line-height: 1.8;
+}
+
+/* ═══ THE PROMISE ═══════════════════════════════════════════════ */
+
+.scene--promise {
+  background:
+    radial-gradient(70% 48% at 50% 62%, color-mix(in srgb, var(--champagne) 6%, transparent) 0%, transparent 66%),
+    linear-gradient(180deg, var(--night-deep) 0%, var(--wine) 30%, var(--wine) 70%, var(--night-deep) 100%);
+}
+.scene--promise .scene-body { margin-top: clamp(1rem, 3vh, 2rem); }
+
+.promise-plate {
+  position: relative;
+  width: min(100%, 40rem);
+  padding: clamp(2rem, 6vw, 3.2rem) clamp(1.6rem, 5vw, 3rem);
+  text-align: center;
+  background: linear-gradient(168deg,
+    color-mix(in srgb, var(--paper-raised) 99%, white) 0%,
+    color-mix(in srgb, var(--ivory) 84%, var(--parchment)) 100%);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--champagne-soft) 56%, transparent),
+    inset 0 0 0 6px color-mix(in srgb, var(--paper-raised) 96%, transparent),
+    inset 0 0 0 7px color-mix(in srgb, var(--champagne-soft) 40%, transparent),
+    var(--shadow-lift);
+}
+
+.promise-plate__corner {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  color: var(--champagne-soft);
+  pointer-events: none;
+}
+.promise-plate__corner svg { width: 100%; height: 100%; }
+.promise-plate__corner--tl { top: 10px; left: 10px; }
+.promise-plate__corner--tr { top: 10px; right: 10px; }
+.promise-plate__corner--bl { bottom: 10px; left: 10px; }
+.promise-plate__corner--br { bottom: 10px; right: 10px; }
+
+.promise-quote {
+  font-family: var(--font-script);
+  font-size: clamp(1.5rem, 3.8vw, 2.1rem);
+  line-height: 1.5;
+  letter-spacing: .04em;
+  color: var(--ink);
+}
+
+.promise-author {
+  margin-top: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--ink-soft);
+}
+.promise-author i {
+  width: 30px;
+  height: 1px;
+  background: var(--line-strong);
+}
+
+/* ═══ SAVE THE DATE ═════════════════════════════════════════════ */
+
+.scene--std {
+  width: 100%;
+  padding-block: clamp(5.6rem, 12vh, 8.4rem);
+  background:
+    radial-gradient(120% 80% at 50% 50%, color-mix(in srgb, var(--champagne) 5%, transparent) 0%, transparent 58%),
+    linear-gradient(180deg, var(--night-deep) 0%, var(--night) 24%, var(--night) 76%, var(--night-deep) 100%);
+}
+
+.std-band {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg,
+      transparent 0%, var(--gold-ghost) 18%, var(--gold-ghost) 82%, transparent 100%);
+  mask-image: linear-gradient(180deg, transparent, #000 30% 70%, transparent);
+  -webkit-mask-image: linear-gradient(180deg, transparent, #000 30% 70%, transparent);
+  pointer-events: none;
+}
+.scene-body--std { position: relative; z-index: 1; }
+
+.std-emblem {
+  display: block;
+  width: clamp(4.6rem, 10vw, 6.4rem);
+  color: var(--champagne);
+  margin-bottom: .6rem;
+}
+.std-emblem svg { width: 100%; height: auto; }
+
+.std-title {
+  font-family: var(--font-editorial);
+  font-weight: 400;
+  font-size: clamp(2rem, 5.4vw, 3.2rem);
+  letter-spacing: .08em;
+  color: var(--ivory);
+}
+
+.std-crossing {
+  margin-top: .8rem;
+  font-size: clamp(1.15rem, 2.8vw, 1.5rem);
+  letter-spacing: .06em;
+  color: var(--champagne);
+}
+
+.std-numerals {
+  margin-top: 1.3rem;
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 7vw, 4rem);
+  letter-spacing: .06em;
+  line-height: 1.1;
+}
+
+.std-display {
+  margin-top: .9rem;
+  font-family: var(--font-body);
+  font-size: clamp(.95rem, 2vw, 1.08rem);
+  color: var(--night-ink);
+}
+
+.std-note {
+  margin-top: .6rem;
+  font-family: var(--font-body);
+  font-size: .9rem;
+  color: var(--night-faint);
+}
+
+.std-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .9rem;
+  margin-top: clamp(1.4rem, 3.6vh, 2rem);
+}
+.std-actions .btn { min-width: 236px; }
+
+.std-seal {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: clamp(5.6rem, 12vw, 6.8rem);
+  aspect-ratio: 1;
+  margin-top: clamp(1.6rem, 4vh, 2.4rem);
+  color: color-mix(in srgb, var(--champagne) 80%, transparent);
+}
+.std-seal .seal__art,
+.closing-seal .seal__art { width: 100%; height: auto; }
+.std-seal .seal__initials,
+.closing-seal .seal__initials {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: clamp(1rem, 2.6vw, 1.2rem);
+  letter-spacing: .1em;
+  color: var(--gilding);
+}
+
+/* ═══ THE PROGRAMME — events ═══════════════════════════════════ */
+
+.scene--details {
+  width: 100%;
+  background:
+    radial-gradient(80% 42% at 50% 0%, color-mix(in srgb, var(--champagne) 4%, transparent) 0%, transparent 60%),
+    var(--night-deep);
+}
+.scene--details .scene-body { margin-bottom: clamp(2rem, 5vh, 3rem); }
+
+.details-intro { text-align: center; }
+
+.events {
+  position: relative;
+  width: min(100%, 46rem);
+  display: grid;
+  gap: clamp(1.1rem, 3vh, 1.7rem);
+  padding-inline-start: clamp(2.4rem, 6vw, 3rem);
+  list-style: none;
+  margin: 0;
+}
+
+/* the gilded rail the diamonds hang from */
+.events::before {
+  content: "";
+  position: absolute;
+  left: clamp(1rem, 3vw, 1.55rem);
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: linear-gradient(180deg,
+    transparent, var(--gold-line) 12% 88%, transparent);
+}
+
+.event {
+  position: relative;
+  display: block;
+}
+
+.event__node {
+  position: absolute;
+  left: calc(clamp(2.4rem, 6vw, 3rem) * -1 + .55rem);
+  top: 1.9rem;
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+}
+
+.event__diamond {
+  width: 11px;
+  height: 11px;
+  rotate: 45deg;
+  border: 1.4px solid var(--champagne);
+  background: color-mix(in srgb, var(--champagne) 14%, var(--night-deep));
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--champagne) 7%, transparent);
+}
+.event__diamond--prime {
+  border-color: var(--gold-bright);
+  background: color-mix(in srgb, var(--champagne) 30%, var(--night-deep));
+}
+
+.event__sunburst {
+  position: absolute;
+  inset: -28px;
+  color: color-mix(in srgb, var(--champagne) 55%, transparent);
+  opacity: .8;
+}
+.event__sunburst svg { width: 100%; height: 100%; }
+
+.event__card {
+  position: relative;
+  width: 100%;
+  padding: clamp(1.15rem, 3vw, 1.5rem) clamp(1.2rem, 3.4vw, 1.7rem);
+  background: linear-gradient(168deg,
+    color-mix(in srgb, var(--wine) 88%, var(--champagne) 3%) 0%,
+    color-mix(in srgb, var(--night) 92%, var(--champagne) 2.5%) 100%);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--champagne) 30%, transparent);
+}
+
+/* stepped marquee shoulders on each card */
+.event__card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  border-left: 1px solid color-mix(in srgb, var(--champagne) 40%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--champagne) 40%, transparent);
+  clip-path: polygon(8px 0, 8px 8px, 0 8px, 0 16px, 8px 16px, 16px 16px, 16px 8px, 22px 8px);
+  border: 0;
+  background:
+    linear-gradient(to left, color-mix(in srgb, var(--champagne) 42%, transparent), transparent) 0 8px/8px 1px no-repeat,
+    linear-gradient(to bottom, color-mix(in srgb, var(--champagne) 42%, transparent), transparent) 8px 0/1px 8px no-repeat;
+  pointer-events: none;
+}
+
+.event__card--prime {
+  background: linear-gradient(168deg,
+    color-mix(in srgb, var(--champagne) 12%, var(--wine)) 0%,
+    color-mix(in srgb, var(--champagne) 6%, var(--night)) 100%);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--champagne) 48%, transparent),
+    inset 0 0 0 4px color-mix(in srgb, var(--champagne) 7%, transparent);
+}
+
+.event__index {
+  position: absolute;
+  top: clamp(1.15rem, 3vw, 1.5rem);
+  right: clamp(1.2rem, 3.4vw, 1.7rem);
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2.6vw, 1.5rem);
+  color: color-mix(in srgb, var(--champagne) 62%, transparent);
+  letter-spacing: .04em;
+}
+
+.event__name {
+  font-family: var(--font-editorial);
+  font-weight: 400;
+  font-size: clamp(1.35rem, 3.2vw, 1.75rem);
+  letter-spacing: .06em;
+  color: var(--ivory);
+  padding-right: 2.6rem;
+}
+
+.event__when {
+  margin-top: .45rem;
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: .68rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--champagne);
+}
+
+.event__note {
+  margin-top: .6rem;
+  font-family: var(--font-body);
+  font-size: .95rem;
+  line-height: 1.85;
+  color: var(--night-faint);
+  max-width: 52ch;
+}
+
+/* ── the particulars — a gilded marquee plate ─────────────────── */
+
+.particulars {
+  position: relative;
+  width: min(100%, 46rem);
+  margin-top: clamp(1.8rem, 5vh, 2.8rem);
+  padding: clamp(1.6rem, 4vw, 2.4rem) clamp(1.2rem, 3.4vw, 2.2rem);
+  text-align: center;
+  background: linear-gradient(168deg,
+    color-mix(in srgb, var(--wine) 86%, var(--champagne) 3%) 0%,
+    color-mix(in srgb, var(--night) 92%, var(--champagne) 2.5%) 100%);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--champagne) 34%, transparent),
+    inset 0 0 0 4px color-mix(in srgb, var(--champagne) 7%, transparent);
+}
+
+.particulars-eyebrow { color: var(--champagne); }
+
+.particulars-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1.2rem, 3vw, 2rem) clamp(1rem, 3vw, 1.8rem);
+  margin-top: clamp(1.2rem, 3vh, 1.7rem);
+}
+
+.particular {
+  display: grid;
+  gap: .4rem;
+  justify-items: center;
+  padding-top: .6rem;
+  border-top: 1px solid color-mix(in srgb, var(--champagne) 24%, transparent);
+}
+
+.particular-label { color: var(--champagne); }
+
+.particular-value {
+  font-family: var(--font-body);
+  font-size: .95rem;
+  line-height: 1.7;
+  color: var(--night-ink);
+  max-width: 34ch;
+}
+
+.particular-note {
+  font-family: var(--font-body);
+  font-size: .85rem;
+  line-height: 1.7;
+  color: var(--night-faint);
+  max-width: 36ch;
+}
+
+/* ═══ THE PALETTE ═══════════════════════════════════════════════ */
+
+.scene--palette {
+  width: 100%;
+  background:
+    radial-gradient(70% 46% at 50% 40%, color-mix(in srgb, var(--champagne) 4.5%, transparent) 0%, transparent 64%),
+    linear-gradient(180deg, var(--night-deep) 0%, var(--night) 26%, var(--night) 74%, var(--night-deep) 100%);
+}
+
+.palette-intro {
+  text-align: center;
+  max-width: 56ch;
+}
+
+.palette-swatches {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(1.2rem, 3.4vw, 2.2rem);
+  margin-top: clamp(1.6rem, 4vh, 2.4rem);
+  padding: 0;
+}
+.palette-swatches li {
+  display: grid;
+  justify-items: center;
+  gap: .8rem;
+}
+
+.swatch {
+  width: 46px;
+  height: 46px;
+  rotate: 45deg;
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, .1), transparent 55%);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--champagne) 62%, transparent),
+    inset 0 0 0 4px var(--night-deep),
+    inset 0 0 0 5px color-mix(in srgb, var(--champagne) 45%, transparent);
+}
+
+.swatch-name {
+  font-family: var(--font-ui);
+  font-size: .62rem;
+  font-weight: 600;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--night-faint);
+  text-align: center;
+}
+
+.dresscode {
+  position: relative;
+  width: min(100%, 34rem);
+  margin-top: clamp(2rem, 5vh, 3rem);
+  padding: clamp(1.6rem, 4.5vw, 2.4rem);
+  text-align: center;
+  display: grid;
+  justify-items: center;
+  gap: .55rem;
+  background: linear-gradient(168deg,
+    color-mix(in srgb, var(--wine) 88%, var(--champagne) 3%) 0%,
+    color-mix(in srgb, var(--night) 92%, var(--champagne) 2.5%) 100%);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--champagne) 32%, transparent);
+}
+
+.dresscode-orn {
+  width: min(300px, 84%);
+  height: 26px;
+  color: color-mix(in srgb, var(--champagne) 66%, transparent);
+}
+.dresscode-orn svg { width: 100%; height: 100%; display: block; }
+
+.dresscode-label { color: var(--champagne); }
+
+.dresscode-title {
+  font-family: var(--font-script);
+  font-size: clamp(1.3rem, 3vw, 1.6rem);
+  letter-spacing: .05em;
+  color: var(--ivory);
+}
+
+.dresscode-note {
+  font-family: var(--font-body);
+  font-size: .93rem;
+  line-height: 1.8;
+  color: var(--night-faint);
+  max-width: 48ch;
+}
+
+/* ═══ THE EVENING — string of moments ══════════════════════════ */
+
+.scene--itinerary {
+  width: 100%;
+  background:
+    linear-gradient(180deg, var(--night-deep) 0%, var(--wine) 30%, var(--wine) 70%, var(--night-deep) 100%);
+}
+
+.day-words {
+  position: relative;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(1.4rem, 4vw, 3.4rem);
+  margin-top: clamp(1.8rem, 4.5vh, 2.6rem);
+  padding: clamp(1.4rem, 4vw, 2rem) clamp(1rem, 4vw, 2.4rem);
+}
+
+/* the gilded rail the moments hang from */
+.day-words::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  width: min(100%, 54rem);
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent, var(--gold-line) 18% 82%, transparent);
+  pointer-events: none;
+}
+
+.day-word {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: .8rem;
+}
+
+.day-word__bulb {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  color: color-mix(in srgb, var(--champagne) 78%, transparent);
+  background: var(--wine);
+}
+.day-word__bulb svg { width: 26px; height: 26px; }
+
+.day-word__text {
+  font-family: var(--font-editorial);
+  font-size: clamp(1.05rem, 2.6vw, 1.35rem);
+  letter-spacing: .1em;
+  color: var(--night-ink);
+  text-align: center;
+  text-wrap: balance;
+}
+
+/* ═══ THE VENUE — the ballroom marquee ══════════════════════════ */
+
+.scene--venue {
+  width: 100%;
+  background:
+    radial-gradient(84% 56% at 50% 42%, color-mix(in srgb, var(--champagne) 5%, transparent) 0%, transparent 62%),
+    var(--night-deep);
+}
+
+.venue-title {
+  font-family: var(--font-editorial);
+  font-weight: 400;
+  font-size: clamp(2.2rem, 6vw, 3.6rem);
+  letter-spacing: .08em;
+  color: var(--ivory);
+  text-align: center;
+}
+
+.venue-stage {
+  width: min(100%, 34rem);
+  margin-top: clamp(1.6rem, 4vh, 2.4rem);
+  display: grid;
+  place-items: center;
+}
+
+.venue-marquee {
+  display: block;
+  width: 100%;
+  color: color-mix(in srgb, var(--champagne) 82%, transparent);
+  filter: drop-shadow(0 10px 34px color-mix(in srgb, var(--champagne) 14%, transparent));
+}
+.venue-marquee svg { width: 100%; height: auto; display: block; }
+
+.venue-description {
+  max-width: 56ch;
+  text-align: center;
+  margin-top: clamp(1.6rem, 4vh, 2.2rem);
+}
+
+.venue-sublines {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(1rem, 3.4vw, 2.6rem);
+  margin-top: clamp(1.4rem, 3.6vh, 2rem);
+}
+.venue-sublines .sub {
+  display: inline-flex;
+  align-items: baseline;
+  gap: .6rem;
+}
+.venue-sublines .sub .label-caps { color: var(--champagne); }
+.venue-sublines .sub em {
+  font-style: normal;
+  font-family: var(--font-body);
+  font-size: .95rem;
+  color: var(--night-faint);
+}
+
+.venue-address {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  margin-top: clamp(1.8rem, 4.4vh, 2.4rem);
+  font-family: var(--font-body);
+  font-size: .95rem;
+  color: var(--night-ink);
+}
+.venue-address .icon {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: var(--champagne);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.venue-actions {
+  margin-top: clamp(1.4rem, 3.4vh, 2rem);
+}
+
+/* ═══ THE COUNTDOWN ═════════════════════════════════════════════ */
+
+.scene--countdown {
+  width: 100%;
+  background:
+    radial-gradient(64% 46% at 50% 52%, color-mix(in srgb, var(--champagne) 5.5%, transparent) 0%, transparent 66%),
+    linear-gradient(180deg, var(--night-deep) 0%, var(--night) 30%, var(--night) 70%, var(--night-deep) 100%);
+}
+
+.countdown-emblem {
+  position: relative;
+  width: clamp(3rem, 7vw, 4.2rem);
+  margin-bottom: .6rem;
+  color: color-mix(in srgb, var(--champagne) 72%, transparent);
+  opacity: .8;
+  pointer-events: none;
+}
+.countdown-emblem svg { width: 100%; height: auto; }
+
+.count-script {
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  letter-spacing: .05em;
+  line-height: 1.4;
+  color: var(--ivory);
+  text-align: center;
+}
+.count-script em {
+  font-style: normal;
+  color: var(--champagne);
+}
+
+.count-clock {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(.8rem, 2.4vw, 1.4rem);
+  margin-top: clamp(1.8rem, 4.5vh, 2.6rem);
+}
+
+.count-unit {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: .5rem;
+  min-width: clamp(4.4rem, 12vw, 5.6rem);
+  padding: clamp(.9rem, 2.4vw, 1.3rem) clamp(.8rem, 2vw, 1.1rem);
+  background: color-mix(in srgb, var(--wine) 84%, transparent);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--champagne) 34%, transparent);
+}
+
+/* stepped shoulders on the clock plates */
+.count-unit::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid color-mix(in srgb, var(--champagne) 16%, transparent);
+  clip-path: polygon(0 0, 7px 0, 7px 4px, 4px 4px, 4px 7px, 0 7px,
+                     0 calc(100% - 7px), 4px calc(100% - 7px), 4px calc(100% - 4px), 7px calc(100% - 4px), 7px 100%,
+                     calc(100% - 7px) 100%, calc(100% - 7px) calc(100% - 4px), calc(100% - 4px) calc(100% - 4px), calc(100% - 4px) calc(100% - 7px),
+                     100% calc(100% - 7px), 100% 7px, calc(100% - 4px) 7px, calc(100% - 4px) 4px, calc(100% - 7px) 4px, calc(100% - 7px) 0);
+  pointer-events: none;
+}
+
+.count-num {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 5.4vw, 2.8rem);
+  line-height: 1;
+  color: var(--gold-bright);
+}
+
+.count-label { color: var(--night-faint); }
+
+.count-summary {
+  margin-top: 1.1rem;
+  font-family: var(--font-body);
+  font-size: .95rem;
+  color: var(--night-faint);
+  text-align: center;
+}
+
+.count-message {
+  font-family: var(--font-script);
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  letter-spacing: .04em;
+  color: var(--champagne);
+  text-align: center;
+}
+
+.count-date {
+  margin-top: 1rem;
+  color: var(--gilding-soft);
+  text-align: center;
+}
+.count-date__zone { color: var(--gilding-soft); }
+
+/* ═══ KINDLY RESPOND — RSVP ═════════════════════════════════════ */
+
+.scene--rsvp {
+  width: 100%;
+  background:
+    radial-gradient(70% 50% at 50% 46%, color-mix(in srgb, var(--champagne) 4%, transparent) 0%, transparent 62%),
+    var(--night-deep);
+  overflow: clip;
+}
+
+.watermark-script {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-editorial);
+  font-size: clamp(5rem, 18vw, 13rem);
+  letter-spacing: .1em;
+  white-space: nowrap;
+  color: color-mix(in srgb, var(--champagne) 6%, transparent);
+  pointer-events: none;
+  user-select: none;
+}
+
+.rsvp-card {
+  position: relative;
+  width: min(100%, 36rem);
+  padding: clamp(2rem, 5.5vw, 3rem) clamp(1.4rem, 4.5vw, 2.6rem) clamp(1.8rem, 5vw, 2.6rem);
+  text-align: center;
+  background: linear-gradient(168deg,
+    color-mix(in srgb, var(--paper-raised) 99%, white) 0%,
+    color-mix(in srgb, var(--ivory) 84%, var(--parchment)) 100%);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--champagne-soft) 55%, transparent),
+    inset 0 0 0 6px color-mix(in srgb, var(--paper-raised) 96%, transparent),
+    inset 0 0 0 7px color-mix(in srgb, var(--champagne-soft) 40%, transparent),
+    var(--shadow-lift);
+}
+
+.rsvp-title {
+  margin-top: .4rem;
+  font-family: var(--font-editorial);
+  font-weight: 400;
+  font-size: clamp(1.9rem, 5vw, 2.7rem);
+  letter-spacing: .07em;
+  color: var(--ink);
+}
+
+.rsvp-deadline {
+  margin-top: .6rem;
+  font-family: var(--font-body);
+  font-size: .95rem;
+  color: var(--ink-soft);
+}
+
+.rsvp-ornament {
+  width: min(300px, 80%);
+  margin: 1.3rem auto 0;
+  color: var(--champagne-soft);
+}
+.rsvp-ornament__img { width: 100%; height: auto; display: block; }
+
+/* ═══ A CLOSING TOAST ═══════════════════════════════════════════ */
+
+.scene--closing {
+  width: 100%;
+  background:
+    radial-gradient(80% 60% at 50% 18%, color-mix(in srgb, var(--champagne) 6%, transparent) 0%, transparent 60%),
+    linear-gradient(180deg, var(--night-deep) 0%, var(--night) 34%, var(--night) 76%, var(--night-deep) 100%);
+}
+
+.closing-plate {
+  position: relative;
+  width: min(100%, 26rem);
+  display: grid;
+  place-items: center;
+  color: color-mix(in srgb, var(--champagne) 76%, transparent);
+}
+.closing-plate::before {
+  content: "";
+  position: absolute;
+  inset: -12% -22%;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--champagne) 7%, transparent), transparent 74%);
+  pointer-events: none;
+}
+.closing-plate__art {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 8px 26px color-mix(in srgb, var(--champagne) 12%, transparent));
+}
+
+.closing-script {
+  font-family: var(--font-script);
+  font-size: clamp(1.25rem, 3vw, 1.6rem);
+  letter-spacing: .08em;
+  color: var(--champagne);
+}
+
+.closing-names {
+  margin-top: .5rem;
+  font-size: clamp(2.2rem, 7vw, 4rem);
+  line-height: 1.2;
+  letter-spacing: .06em;
+  color: var(--ivory);
+  text-shadow: 0 2px 30px color-mix(in srgb, var(--champagne) 30%, transparent);
+}
+
+.closing-date {
+  margin-top: .9rem;
+  color: var(--gilding-soft);
+}
+
+.closing-quote {
+  margin-top: 1.5rem;
+  max-width: 44ch;
+  font-family: var(--font-script);
+  font-size: clamp(1.2rem, 3vw, 1.55rem);
+  line-height: 1.55;
+  letter-spacing: .04em;
+  color: var(--night-ink);
+  text-align: center;
+}
+
+.closing-quote-credit {
+  margin-top: .8rem;
+  color: var(--gilding-soft);
+}
+
+.closing-message {
+  margin-top: 1.4rem;
+  max-width: 46ch;
+  font-family: var(--font-body);
+  font-size: .98rem;
+  line-height: 1.95;
+  color: var(--night-faint);
+  text-align: left;
+}
+
+.closing-seal {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: clamp(5.4rem, 12vw, 6.6rem);
+  aspect-ratio: 1;
+  margin-top: clamp(1.8rem, 4.5vh, 2.6rem);
+  color: color-mix(in srgb, var(--champagne) 82%, transparent);
+}
+
+.closing-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .9rem;
+  margin-top: clamp(1.8rem, 4.5vh, 2.6rem);
+}
+.closing-actions .btn { color: var(--sunset-soft); }
+
+/* ═══ THE FOOTER — the stage-door plaque ════════════════════════ */
+
+.footer {
+  display: grid;
+  justify-items: center;
+  gap: .5rem;
+  padding: clamp(2.4rem, 6vh, 3.6rem) var(--scene-pad-x) clamp(2.2rem, 6vh, 3.2rem);
+  background: linear-gradient(180deg, var(--night-deep) 0%, #060504 100%);
+  text-align: center;
+}
+
+.footer-ornament {
+  width: min(420px, 84%);
+  height: 22px;
+  color: color-mix(in srgb, var(--champagne) 58%, transparent);
+  margin-bottom: .6rem;
+}
+.footer-ornament svg { width: 100%; height: 100%; display: block; }
+
+.footer .small { color: var(--night-faint); }
+
+.footer-credit a {
+  color: var(--night-faint);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold-ghost);
+  transition: color .25s ease, border-color .25s ease;
+}
+.footer-credit a:hover { color: var(--gilding); }

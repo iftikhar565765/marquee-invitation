@@ -1,0 +1,105 @@
+/* ═══════════════════════════════════════════════════════════════
+   MARQUEE · variables.css — the black-tie ballroom design system
+   ---------------------------------------------------------------
+   Built from four materials of the jazz-age ballroom: polished
+   onyx lacquer, champagne gold foil, ivory vellum and platinum
+   light. Dark bands are lacquered onyx; light cards are vellum
+   floats with gilded frames. Every colour token is overwritten
+   at runtime by main.js applyTheme(); defaults mirror the onyx
+   (black & champagne) preset.
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── the onyx palette (black tie & champagne) ────────────────── */
+  --burgundy:      #C7A558;   /* champagne accent — primary accent   */
+  --burgundy-deep: #A8873F;   /* deep champagne                     */
+  --wine:          #181A1F;   /* graphite panel                    */
+  --crimson:       #F0E4C4;   /* pale champagne — light accent      */
+  --champagne:     #CBA85C;   /* champagne gold foil                */
+  --champagne-soft:#9C8248;   /* burnished antique gold              */
+  --parchment:     #E8DFC8;   /* aged vellum                         */
+  --ivory:         #F1EAD7;   /* ivory — headline light on onyx       */
+  --paper-raised:  #F5EFDF;   /* raised vellum card                  */
+  --night:         #131418;   /* graphite band                        */
+  --night-deep:    #0B0C0E;   /* deep graphite page ground            */
+  --olive:         #6A6E78;   /* platinum umber                       */
+  --olive-deep:    #54575F;
+  --sage:          #B4B8C2;   /* pale platinum                        */
+  --rose:          #D9C9A3;   /* antique gold wash                   */
+  --ink:           #1B1C20;   /* vellum ink (text on light cards)     */
+  --ink-soft:      #54565F;   /* soft vellum ink                      */
+  --charcoal:      #8B8E98;
+
+  /* ── derived golds ────────────────────────────────────────── */
+  --gold:          var(--champagne);
+  --gold-bright:   color-mix(in srgb, var(--champagne) 62%, #F6E7B8);
+  --gold-dim:      color-mix(in srgb, var(--champagne) 58%, var(--night-deep) 14%);
+  --gold-line:     color-mix(in srgb, var(--champagne) 52%, transparent);
+  --gold-faint:    color-mix(in srgb, var(--champagne) 26%, transparent);
+  --gold-ghost:    color-mix(in srgb, var(--champagne) 13%, transparent);
+
+  /* ── vellum tones ─────────────────────────────────────────── */
+  --paper-line:    color-mix(in srgb, var(--champagne-soft) 50%, transparent);
+  --paper-wash:    color-mix(in srgb, var(--wine) 3%, var(--paper-raised));
+  --cream-deep:    color-mix(in srgb, var(--parchment) 62%, var(--ivory) 38%);
+
+  /* ── the ballroom's own derived tones — footlights at dusk ── */
+  --sky-1:         var(--night-deep);
+  --sky-2:         color-mix(in srgb, var(--night) 84%, var(--olive) 16%);
+  --glass:         color-mix(in srgb, var(--night) 55%, transparent);
+  --glass-deep:    color-mix(in srgb, var(--night-deep) 72%, transparent);
+  --glass-edge:    color-mix(in srgb, var(--champagne) 26%, transparent);
+  --gilding:       color-mix(in srgb, var(--champagne) 86%, white 14%);
+  --gilding-soft:  color-mix(in srgb, var(--champagne) 55%, transparent);
+  --sunset:        color-mix(in srgb, var(--ivory) 82%, var(--champagne) 18%);
+  --sunset-soft:   color-mix(in srgb, var(--ivory) 58%, transparent);
+  --night-ink:     color-mix(in srgb, var(--ivory) 76%, transparent);
+  --night-faint:   color-mix(in srgb, var(--ivory) 62%, transparent);
+  --ember:         color-mix(in srgb, var(--champagne) 40%, #F6E7B8 60%);
+  --lacquer-1:     #171310;
+  --lacquer-2:     #100D0A;
+  --vellum-text:   color-mix(in srgb, var(--ivory) 88%, transparent);
+
+  /* ── luxury hardware — hairlines and soft shadow layers ───── */
+  --line:          color-mix(in srgb, var(--champagne) 44%, transparent);
+  --line-strong:   color-mix(in srgb, var(--champagne-soft) 72%, transparent);
+  --shadow-soft:   0 14px 40px -18px color-mix(in srgb, #000000 52%, transparent),
+                   0 4px 14px -8px color-mix(in srgb, #000000 34%, transparent);
+  --shadow-lift:   0 26px 60px -26px color-mix(in srgb, #000000 58%, transparent),
+                   0 8px 22px -12px color-mix(in srgb, #000000 38%, transparent);
+  --shadow-card:   var(--shadow-lift);
+  --shadow-gold:   0 1px 0 rgba(255, 248, 224, .38) inset;
+  --shadow-seal:   0 4px 10px color-mix(in srgb, var(--champagne) 28%, transparent),
+                   0 14px 30px color-mix(in srgb, var(--champagne) 16%, transparent);
+
+  /* ── type ─────────────────────────────────────────────────
+     Poiret One — pure deco geometry for the great headlines ·
+     Limelight — the marquee numerals & monogram · Italiana —
+     the elegant hairline romance · Special Elite — telegram
+     marginalia · Josefin Sans — deco letterspaced labels.        */
+  --font-editorial: 'Poiret One', 'Cinzel', 'Georgia', serif;
+  --font-display:   'Limelight', 'Poiret One', 'Georgia', serif;
+  --font-script:    'Italiana', 'Poiret One', 'Georgia', serif;
+  --font-hand:      'Special Elite', 'Courier New', monospace;
+  --font-body:      'Josefin Sans', 'Jost', 'Trebuchet MS', sans-serif;
+  --font-ui:        'Josefin Sans', 'Jost', 'Trebuchet MS', sans-serif;
+
+  /* ── flow of type sizes ───────────────────────────────────── */
+  --fs-hero-names:  clamp(3.2rem, 10vw, 6.4rem);
+  --fs-display:     clamp(2.1rem, 5.2vw, 3.3rem);
+  --fs-title:       clamp(1.55rem, 3.6vw, 2.35rem);
+  --fs-subtitle:    clamp(1.02rem, 2.2vw, 1.28rem);
+  --fs-body:        clamp(.98rem, 1.7vw, 1.13rem);
+  --fs-label:       clamp(.66rem, 1.25vw, .78rem);
+  --fs-numerals:    clamp(2rem, 5vw, 3.1rem);
+
+  /* ── measures & rhythm ────────────────────────────────────── */
+  --measure:        34rem;
+  --scene-pad-y:    clamp(4.4rem, 10vh, 7.2rem);
+  --scene-pad-x:    clamp(1.4rem, 5vw, 3.2rem);
+  --card-radius:    2px;
+  --speed:          .42s;
+  --ease:           cubic-bezier(.22, .75, .3, 1);
+
+  color-scheme: dark;
+}
