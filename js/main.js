@@ -648,14 +648,16 @@
   });
 
   var themePresets = {
-    /* moods of the ballroom — the default onyx suite: polished
-       black lacquer, champagne foil, ivory vellum and platinum
-       light. The other moods remain available through the editor. */
-    onyx:     { burgundy: '#C7A558', deep: '#A8873F', wine: '#181A1F', crimson: '#F0E4C4', champagne: '#CBA85C', soft: '#9C8248', parchment: '#E8DFC8', ivory: '#F1EAD7', paper: '#F5EFDF', night: '#131418', nightDeep: '#0B0C0E', olive: '#6A6E78', oliveDeep: '#54575F', sage: '#B4B8C2', rose: '#D9C9A3', ink: '#1B1C20', inkSoft: '#54565F', charcoal: '#8B8E98' },
-    midnight: { burgundy: '#C9CDDB', deep: '#A9AFC4', wine: '#10141D', crimson: '#E7EAF4', champagne: '#C4C9D8', soft: '#8E93A8', parchment: '#E4E7F0', ivory: '#EBEEF6', paper: '#F4F6FB', night: '#0D1119', nightDeep: '#080B11', olive: '#565D70', oliveDeep: '#3F4454', sage: '#A8AEC2', rose: '#C7CCE0', ink: '#14161C', inkSoft: '#4C5266', charcoal: '#8B92A6' },
-    ruby:     { burgundy: '#C9A24B', deep: '#A8873F', wine: '#170E10', crimson: '#E8CDD2', champagne: '#C9A24B', soft: '#9A7B36', parchment: '#F0E2E4', ivory: '#F5EAEC', paper: '#FBF4F5', night: '#120B0D', nightDeep: '#0A0607', olive: '#5F4048', oliveDeep: '#482E34', sage: '#B8969E', rose: '#E2BAC1', ink: '#190F12', inkSoft: '#5E4148', charcoal: '#94777E' },
-    jade:     { burgundy: '#C9A24B', deep: '#A8873F', wine: '#0E1A15', crimson: '#D4E6DC', champagne: '#C9A24B', soft: '#9A7B36', parchment: '#E2EEE7', ivory: '#EAF4EE', paper: '#F2FAF4', night: '#0B1511', nightDeep: '#060D0A', olive: '#3E5C50', oliveDeep: '#2C443A', sage: '#9AC2B0', rose: '#C6E0D2', ink: '#0E1A15', inkSoft: '#3A564A', charcoal: '#7FA294' },
-    espresso: { burgundy: '#D3AA6E', deep: '#AE884E', wine: '#221910', crimson: '#F4E8D4', champagne: '#D3AA6E', soft: '#A07C4A', parchment: '#EFE4CE', ivory: '#F6EDDC', paper: '#FBF5E9', night: '#1B140C', nightDeep: '#100B06', olive: '#6B573C', oliveDeep: '#52422D', sage: '#BFA988', rose: '#E6D3B2', ink: '#1D1610', inkSoft: '#5A4A34', charcoal: '#9A8666' }
+    /* moods of the Roseraie — light romantic palettes of the rose
+       garden. The default blush & ivory suite, plus sage, rosé,
+       powder-blue and terracotta variations. The keys are the
+       stable contract (older saved drafts keep working); the
+       editor shows them under their new romantic names. */
+    onyx:     { burgundy: '#C4858B', deep: '#A96872', wine: '#F9EDE6', crimson: '#F2E3C8', champagne: '#B28A4E', soft: '#96703A', parchment: '#F4E9D8', ivory: '#FDFAF3', paper: '#FFFCF6', night: '#F6EDDF', nightDeep: '#F1E6D6', olive: '#7C8F78', oliveDeep: '#5F7460', sage: '#A9BBA3', rose: '#EBC3C0', ink: '#46333B', inkSoft: '#7A6469', charcoal: '#9C8E92' },
+    midnight: { burgundy: '#A9BBA3', deep: '#7C8F78', wine: '#EDF2E9', crimson: '#E9EFDF', champagne: '#A08F55', soft: '#7E6F3E', parchment: '#F0EFE2', ivory: '#FBFAF2', paper: '#FEFDF8', night: '#F3F1E4', nightDeep: '#ECEADB', olive: '#6D8267', oliveDeep: '#52644D', sage: '#A5B69B', rose: '#D8E0CE', ink: '#3B463A', inkSoft: '#6C7A68', charcoal: '#97A292' },
+    ruby:     { burgundy: '#C4767F', deep: '#A45862', wine: '#F7E7E6', crimson: '#F5DAD5', champagne: '#B27E4F', soft: '#8F6238', parchment: '#F5E6DA', ivory: '#FDF8F2', paper: '#FFFCF8', night: '#F6EAE2', nightDeep: '#F0E1D7', olive: '#8F7F72', oliveDeep: '#6E5F53', sage: '#C0A99C', rose: '#EDBFB9', ink: '#4C3339', inkSoft: '#7E5F63', charcoal: '#A38D8D' },
+    jade:     { burgundy: '#8FA8BC', deep: '#6E8CA5', wine: '#E9EFF3', crimson: '#DEE8EF', champagne: '#B28A4E', soft: '#96703A', parchment: '#EAEFF2', ivory: '#F9FBFC', paper: '#FDFEFE', night: '#EEF3F5', nightDeep: '#E6EDF0', olive: '#7E96A8', oliveDeep: '#5F7788', sage: '#A8BECB', rose: '#C3D4DF', ink: '#3A4A56', inkSoft: '#6A7B87', charcoal: '#93A4AE' },
+    espresso: { burgundy: '#C2845F', deep: '#A26743', wine: '#F8EAE0', crimson: '#F4E0CF', champagne: '#B5874C', soft: '#91683A', parchment: '#F5E8D9', ivory: '#FDF9F2', paper: '#FFFCF7', night: '#F7EDDF', nightDeep: '#F1E5D2', olive: '#97815F', oliveDeep: '#756345', sage: '#C2A98B', rose: '#E8C6AC', ink: '#4A382C', inkSoft: '#7C6753', charcoal: '#A6927C' }
   };
 
   function applyTheme() {
@@ -855,7 +857,7 @@
     list.innerHTML = items.map(function (item) {
       return '<li class="day-word reveal">' +
         '<span class="day-word__bulb" aria-hidden="true">' +
-        '<svg viewBox="-12 -12 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" aria-hidden="true"><path d="M0 -8 L7.4 0 L0 8 L-7.4 0 Z"/><path d="M0 -4 L3.7 0 L0 4 L-3.7 0 Z" stroke-opacity=".5"/></svg></span>' +
+        '<svg viewBox="-12 -12 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" aria-hidden="true"><circle cx="0" cy="-3.6" r="4.6"/><circle cx="0" cy="-3.6" r="1.8" stroke-opacity=".6"/><path d="M0 1 V8.4"/><path d="M0 5.4 C -2.6 5 -4 3.6 -4.3 1.2" stroke-opacity=".6"/><path d="M0 4 C 2.6 3.6 4 2.2 4.3 -0.2" stroke-opacity=".6"/></svg></span>' +
         '<span class="day-word__text" data-editor-path="moments.' + item.index + '">' +
         escapeHTML(item.word.trim()) + '</span></li>';
     }).join('');

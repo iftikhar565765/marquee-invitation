@@ -1,12 +1,11 @@
 /* ═══════════════════════════════════════════════════════════════
-   MARQUEE · envelope.css — the sealed letter in the ballroom
+   THE ROSERAIE · envelope.css — the sealed letter in the garden
    ---------------------------------------------------------------
-   A black-lacquer envelope sealed with a champagne-gold sunburst
-   seal, resting on deep onyx: gold-diamond motes drifting,
-   stepped ziggurat brackets at the corners, a champagne glow
-   behind. The flap's liner is lacquered black with a gold
-   chevron-and-diamond lattice — when it lifts, the vellum
-   letter is the reveal.
+   A blush-silk envelope sealed with a hand-poured rose wax seal,
+   resting on warm ivory: rose petals drifting, botanical corner
+   cascades, a soft rose glow behind. The flap's liner is ivory
+   silk with a fine gold floral lattice — when it lifts, the
+   vellum letter is the reveal.
    Machinery unchanged: flap rotates on its top edge, the letter
    rises from the pocket, the seal breaks away. GSAP drives the
    same geometry; the CSS keyframes below are the no-GSAP twin.
@@ -21,9 +20,9 @@
   padding: clamp(4.5rem, 10vh, 7rem) var(--scene-pad-x);
   overflow: clip;
   background:
-    radial-gradient(120% 70% at 50% -10%, color-mix(in srgb, var(--champagne) 7%, transparent) 0%, transparent 55%),
-    radial-gradient(90% 46% at 50% 112%, color-mix(in srgb, var(--champagne) 8%, transparent) 0%, transparent 66%),
-    linear-gradient(180deg, #050608 0%, var(--night-deep) 60%, var(--night) 100%);
+    radial-gradient(120% 70% at 50% -10%, color-mix(in srgb, var(--rose) 26%, transparent) 0%, transparent 55%),
+    radial-gradient(90% 46% at 50% 112%, color-mix(in srgb, var(--rose) 30%, transparent) 0%, transparent 66%),
+    linear-gradient(180deg, color-mix(in srgb, var(--rose) 14%, var(--night-deep)) 0%, var(--night-deep) 60%, var(--night) 100%);
 }
 
 .opening.is-leaving {
@@ -33,12 +32,11 @@
   to { opacity: 0; }
 }
 
-/* ── stepped ziggurat brackets at the night's corners ─────────── */
+/* ── botanical corner cascades (photoreal art) ────────────────── */
 .opening__brackets {
   position: absolute;
   inset: 0;
   z-index: 0;
-  color: color-mix(in srgb, var(--champagne) 52%, transparent);
   pointer-events: none;
 }
 .opening__bracket {
@@ -61,35 +59,34 @@
   opacity: .95;
   pointer-events: none;
   user-select: none;
-  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, .5));
+  filter: drop-shadow(0 6px 16px color-mix(in srgb, #6E5148 26%, transparent));
 }
 .opening__florals--tl { top: -2.4rem; left: -2.4rem; transform: rotate(-4deg); }
 .opening__florals--tr { top: -2.4rem; right: -2.4rem; transform: scaleX(-1) rotate(-4deg); }
-.opening__florals--bl { bottom: -2.4rem; left: -2.4rem; transform: scaleY(-1) rotate(-4deg); opacity: .5; }
-.opening__florals--br { bottom: -2.4rem; right: -2.4rem; transform: scale(-1, -1) rotate(-4deg); opacity: .5; }
+.opening__florals--bl { bottom: -2.4rem; left: -2.4rem; transform: scaleY(-1) rotate(-4deg); opacity: .45; }
+.opening__florals--br { bottom: -2.4rem; right: -2.4rem; transform: scale(-1, -1) rotate(-4deg); opacity: .45; }
 
-/* ── drifting gold-diamond motes ──────────────────────────────── */
+/* ── drifting rose petals ─────────────────────────────────────── */
 .opening__star,
 .opening__mote {
   position: absolute;
   z-index: 1;
   left: var(--x);
   top: var(--y);
-  width: var(--s);
+  width: calc(var(--s) * 1.5);
   height: var(--s);
-  rotate: 45deg;
-  border: 1px solid color-mix(in srgb, var(--champagne) 62%, transparent);
-  background:
-    linear-gradient(135deg,
-      color-mix(in srgb, var(--champagne) 34%, transparent) 0%,
-      transparent 55%);
+  border: 0;
+  border-radius: 72% 28% 65% 35% / 58% 42% 58% 42%;
+  background: linear-gradient(135deg,
+    color-mix(in srgb, var(--burgundy) 58%, transparent) 0%,
+    color-mix(in srgb, var(--rose) 88%, transparent) 100%);
   opacity: var(--o);
   animation: mote-drift var(--t) ease-in-out var(--d) infinite alternate;
   pointer-events: none;
 }
 @keyframes mote-drift {
   from { transform: translateY(0) rotate(0deg); }
-  to   { transform: translateY(-30px) rotate(24deg); }
+  to   { transform: translateY(-30px) rotate(26deg); }
 }
 
 .opening__moonrise,
@@ -101,7 +98,7 @@
   width: 44rem;
   height: 26rem;
   transform: translateX(-50%);
-  background: radial-gradient(closest-side, color-mix(in srgb, var(--champagne) 8%, transparent), transparent 72%);
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--rose) 34%, transparent), transparent 72%);
   filter: blur(8px);
   animation: glow-breathe 6s var(--ease) infinite alternate;
   pointer-events: none;
@@ -118,12 +115,12 @@
   left: 50%;
   top: 42%;
   transform: translate(-50%, -50%);
-  font-family: var(--font-editorial);
+  font-family: var(--font-script);
   font-size: clamp(4.6rem, 15vw, 11rem);
   line-height: 1;
   white-space: nowrap;
-  letter-spacing: .08em;
-  color: color-mix(in srgb, var(--champagne) 9%, transparent);
+  letter-spacing: .06em;
+  color: color-mix(in srgb, var(--burgundy-deep) 12%, transparent);
   pointer-events: none;
   user-select: none;
 }
@@ -151,11 +148,11 @@
 
 .opening__names {
   margin-bottom: clamp(2rem, 5vh, 3rem);
-  font-size: clamp(2.9rem, 9vw, 5.2rem);
+  font-size: clamp(3.4rem, 10vw, 5.8rem);
   line-height: 1.12;
-  letter-spacing: .05em;
-  color: var(--ivory);
-  text-shadow: 0 1px 18px color-mix(in srgb, var(--champagne) 26%, transparent);
+  letter-spacing: .02em;
+  color: var(--ink);
+  text-shadow: 0 1px 18px color-mix(in srgb, var(--ivory) 80%, transparent);
 }
 
 /* ── the stage — where the letter rests ───────────────────────── */
@@ -169,13 +166,13 @@
   margin-bottom: clamp(2.2rem, 5vh, 3.2rem);
 }
 
-/* the champagne sunburst radiating behind the envelope */
+/* a soft rose halo radiating behind the envelope */
 .envelope-lace {
   position: absolute;
   width: 132%;
   aspect-ratio: 1;
-  color: color-mix(in srgb, var(--champagne) 60%, transparent);
-  opacity: .5;
+  color: color-mix(in srgb, var(--burgundy) 46%, transparent);
+  opacity: .34;
   pointer-events: none;
   user-select: none;
 }
@@ -192,7 +189,7 @@
   width: 80%;
   height: 36px;
   transform: translateX(-50%);
-  background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, .85), transparent 70%);
+  background: radial-gradient(50% 50% at 50% 50%, color-mix(in srgb, #6E5148 40%, transparent), transparent 70%);
   filter: blur(7px);
   pointer-events: none;
 }
@@ -224,7 +221,7 @@
   to   { transform: translateY(-7px); }
 }
 
-/* ── back panel — polished onyx ───────────────────────────────── */
+/* ── back panel — blush silk ─────────────────────────────────── */
 
 .envelope__back {
   position: absolute;
@@ -232,14 +229,14 @@
   z-index: 0;
   border-radius: 2px;
   background: linear-gradient(172deg,
-    #1C1E24 0%,
-    #121317 100%);
+    #F4DCD6 0%,
+    #EBCCc5 100%);
   box-shadow:
     inset 0 0 0 1px color-mix(in srgb, var(--champagne) 34%, transparent),
-    inset 0 -16px 34px rgba(0, 0, 0, .55);
+    inset 0 -16px 34px color-mix(in srgb, #A96872 16%, transparent);
 }
 
-/* ── the letter asleep inside — ivory vellum ──────────────────── */
+/* ── the letter asleep inside — warm ivory vellum ─────────────── */
 
 .envelope__letter {
   position: absolute;
@@ -267,22 +264,22 @@
     color-mix(in srgb, var(--paper-raised) 98%, white) 0%,
     color-mix(in srgb, var(--ivory) 88%, var(--parchment)) 100%);
   box-shadow:
-    inset 0 0 0 1px color-mix(in srgb, var(--champagne-soft) 55%, transparent),
+    inset 0 0 0 1px color-mix(in srgb, var(--champagne-soft) 50%, transparent),
     inset 0 0 0 5px var(--paper-raised),
-    inset 0 0 0 6px color-mix(in srgb, var(--champagne-soft) 42%, transparent);
+    inset 0 0 0 6px color-mix(in srgb, var(--champagne-soft) 38%, transparent);
 }
 
 .envelope__letter-mono {
-  font-size: clamp(1.35rem, 4.4vw, 1.9rem);
-  color: var(--champagne-soft);
+  font-size: clamp(1.5rem, 4.6vw, 2.1rem);
+  color: var(--burgundy-deep);
   line-height: 1.1;
 }
 
 .envelope__letter-names {
   font-family: var(--font-editorial);
-  font-weight: 400;
+  font-weight: 500;
   font-size: clamp(1.2rem, 3.8vw, 1.7rem);
-  letter-spacing: .1em;
+  letter-spacing: .08em;
   color: var(--ink);
   line-height: 1.16;
 }
@@ -291,7 +288,7 @@
   width: 7.4rem;
   height: auto;
   margin-block: .2rem;
-  color: var(--champagne-soft);
+  color: var(--olive);
 }
 
 .envelope__letter-date {
@@ -304,38 +301,38 @@
   color: var(--ink-soft);
 }
 
-/* ── the front pocket — onyx lacquer with a foil hairline ─────── */
+/* ── the front pocket — deeper blush silk with a gold hairline ── */
 
 .envelope__pocket {
   position: absolute;
   inset: 0;
   z-index: 3;
   clip-path: polygon(0 0, 50% 46%, 100% 0, 100% 100%, 0 100%);
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, .45));
+  filter: drop-shadow(0 4px 8px color-mix(in srgb, #6E5148 30%, transparent));
 }
 
 .envelope__pocket-face {
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg,
-    #1F2126 0%,
-    #14161B 46%,
-    #0E0F13 100%);
+    #F0D3CC 0%,
+    #E7C3BD 46%,
+    #DFB6B0 100%);
   box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--champagne) 36%, transparent);
 }
 
 .envelope__pocket-face::after {
-  /* side shading + bottom depth + a lacquer sheen along the top fold */
+  /* side shading + bottom depth + a silk sheen along the top fold */
   content: "";
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(100deg, rgba(0, 0, 0, .38) 0 3%, transparent 14% 86%, rgba(0, 0, 0, .38) 97% 100%),
-    linear-gradient(0deg, rgba(0, 0, 0, .45), transparent 26%),
-    linear-gradient(178deg, rgba(246, 231, 184, .12), transparent 22%);
+    linear-gradient(100deg, color-mix(in srgb, #B9776E 22%, transparent) 0 3%, transparent 14% 86%, color-mix(in srgb, #B9776E 22%, transparent) 97% 100%),
+    linear-gradient(0deg, color-mix(in srgb, #A96872 26%, transparent), transparent 26%),
+    linear-gradient(178deg, rgba(255, 248, 240, .22), transparent 22%);
 }
 
-/* address plate — a fine vellum plaque on the lacquer */
+/* address plate — a fine vellum plaque on the silk */
 .envelope__address {
   position: absolute;
   left: 50%;
@@ -348,10 +345,10 @@
     color-mix(in srgb, var(--paper-raised) 98%, transparent),
     color-mix(in srgb, var(--parchment) 94%, transparent));
   box-shadow:
-    inset 0 0 0 1px color-mix(in srgb, var(--champagne-soft) 62%, transparent),
+    inset 0 0 0 1px color-mix(in srgb, var(--champagne-soft) 58%, transparent),
     inset 0 0 0 3px var(--paper-raised),
-    inset 0 0 0 4px color-mix(in srgb, var(--champagne-soft) 42%, transparent),
-    0 2px 6px rgba(0, 0, 0, .4);
+    inset 0 0 0 4px color-mix(in srgb, var(--champagne-soft) 38%, transparent),
+    0 2px 6px color-mix(in srgb, #6E5148 26%, transparent);
 }
 
 .envelope__to {
@@ -366,13 +363,13 @@
 }
 
 .envelope__address .script {
-  font-size: clamp(1.2rem, 4vw, 1.7rem);
-  color: var(--champagne-soft);
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
+  color: var(--burgundy-deep);
   line-height: 1.05;
   margin-top: .18rem;
 }
 
-/* ── the flap — folded onyx; its liner is a gold lattice ───────── */
+/* ── the flap — folded blush silk; its liner is gold floral ───── */
 
 .envelope__flap {
   position: absolute;
@@ -397,13 +394,13 @@
 
 .envelope__flap-face {
   background: linear-gradient(184deg,
-    #24262C 0%,
-    color-mix(in srgb, #171820 82%, var(--champagne) 18%) 46%,
-    #0E0F13 100%);
+    #F2D6CF 0%,
+    color-mix(in srgb, #E3BCB4 82%, var(--champagne) 18%) 46%,
+    #D9ACA6 100%);
   box-shadow:
     inset 0 0 0 1px color-mix(in srgb, var(--champagne) 40%, transparent),
-    inset 0 10px 22px rgba(246, 231, 184, .08);
-  filter: drop-shadow(0 3px 4px rgba(0, 0, 0, .6));
+    inset 0 10px 22px rgba(255, 246, 238, .18);
+  filter: drop-shadow(0 3px 4px color-mix(in srgb, #6E5148 34%, transparent));
 }
 
 .envelope__flap-face::after {
@@ -413,22 +410,22 @@
   inset: 0;
   background:
     linear-gradient(to bottom right, transparent calc(50% - 1px), color-mix(in srgb, var(--champagne) 42%, transparent) 50%, transparent calc(50% + 1px)),
-    linear-gradient(to bottom left, transparent calc(50% - 1px), rgba(0, 0, 0, .45) 50%, transparent calc(50% + 1px));
+    linear-gradient(to bottom left, transparent calc(50% - 1px), color-mix(in srgb, #A96872 38%, transparent) 50%, transparent calc(50% + 1px));
 }
 
 .envelope__flap-liner {
   transform: rotateX(180deg);
-  /* lacquered black silk — a fine gold chevron-and-diamond lattice,
-     so the lifted flap reads as gilded cloth, not print */
+  /* ivory silk — a fine gold rose-and-leaf lattice,
+     so the lifted flap reads as woven cloth, not print */
   background:
-    radial-gradient(130% 110% at 50% 0%, rgba(246, 231, 184, .16), transparent 62%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='36'%3E%3Cg fill='none' stroke='%23D8B56C' stroke-opacity='.6'%3E%3Cpath d='M 12 12 L 18 7 L 24 12 L 18 17 Z'/%3E%3Cpath d='M 32 26 L 38 21 L 44 26 L 38 31 Z'/%3E%3Cpath d='M 0 30 H 6 M 42 6 H 48'/%3E%3C/g%3E%3C/svg%3E"),
+    radial-gradient(130% 110% at 50% 0%, rgba(255, 250, 242, .35), transparent 62%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='36'%3E%3Cg fill='none' stroke='%23B28A4E' stroke-opacity='.55' stroke-width='1'%3E%3Ccircle cx='18' cy='14' r='3'/%3E%3Ccircle cx='18' cy='14' r='1'/%3E%3Ccircle cx='38' cy='28' r='3'/%3E%3Ccircle cx='38' cy='28' r='1'/%3E%3Cpath d='M 0 30 Q 5 26 10 30 M 42 6 Q 47 2 48 5'/%3E%3C/g%3E%3C/svg%3E"),
     linear-gradient(184deg,
-      color-mix(in srgb, #1C1E24 94%, var(--champagne) 6%) 0%,
-      #0A0B0D 100%);
+      color-mix(in srgb, #F7E6DC 94%, var(--champagne) 6%) 0%,
+      #F0D9CC 100%);
 }
 
-/* ── postage stamp — a deco diamond in gold on vellum ─────────── */
+/* ── postage stamp — a rose sprig on vellum ───────────────────── */
 
 .envelope__stamps {
   position: absolute;
@@ -441,10 +438,10 @@
   width: clamp(2.9rem, 8.5vw, 3.5rem);
   height: auto;
   transform: rotate(4deg);
-  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, .55));
+  filter: drop-shadow(0 2px 5px color-mix(in srgb, #6E5148 30%, transparent));
 }
 
-/* ── the champagne sunburst seal ──────────────────────────────── */
+/* ── the hand-poured wax seal ─────────────────────────────────── */
 
 .envelope__seal-wrap {
   position: absolute;
@@ -463,7 +460,8 @@
 .envelope__seal-img {
   width: 100%;
   height: 100%;
-  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, .65));
+  object-fit: contain;
+  filter: drop-shadow(0 8px 18px color-mix(in srgb, #6E5148 42%, transparent));
 }
 
 .envelope__seal {
@@ -473,10 +471,11 @@
   place-items: center;
   padding-bottom: 3%;
   box-sizing: border-box;
-  font-family: var(--font-display);
-  font-size: clamp(.6rem, 1.8vw, .76rem);
-  letter-spacing: .1em;
-  color: #3D2E0E;
+  font-family: var(--font-script);
+  font-size: clamp(.7rem, 2vw, .9rem);
+  letter-spacing: .06em;
+  color: #5E332F;
+  text-shadow: 0 1px 0 rgba(255, 240, 232, .3);
 }
 
 .envelope:active .envelope__seal-wrap {
@@ -518,7 +517,7 @@
   transition: color .25s ease, border-color .25s ease;
 }
 .opening__skip:hover {
-  color: var(--sunset);
+  color: var(--burgundy-deep);
   border-color: var(--gold-line);
 }
 

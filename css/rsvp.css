@@ -49,15 +49,15 @@
 
 .field.is-invalid input,
 .field.is-invalid textarea {
-  border-color: #A24E2E;
-  box-shadow: 0 0 0 1px color-mix(in srgb, #A24E2E 30%, transparent);
+  border-color: #A05258;
+  box-shadow: 0 0 0 1px color-mix(in srgb, #A05258 30%, transparent);
 }
 
 .field-error {
   font-family: var(--font-ui);
   font-size: .74rem;
   letter-spacing: .04em;
-  color: #A24E2E;
+  color: #A05258;
 }
 
 .field--split input[type="number"] { max-width: 160px; }
@@ -139,7 +139,7 @@
   color: var(--champagne-soft);
   min-height: 1.2em;
 }
-.rsvp-status.is-error { color: #A24E2E; }
+.rsvp-status.is-error { color: #A05258; }
 
 .rsvp-honeypot {
   position: absolute;

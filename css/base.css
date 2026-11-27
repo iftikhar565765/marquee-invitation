@@ -1,10 +1,9 @@
 /* ═══════════════════════════════════════════════════════════════
-   MARQUEE · base.css — foundations of the black-tie ballroom
+   THE ROSERAIE · base.css — foundations of the garden romance
    ---------------------------------------------------------------
-   Poiret One editorial headlines, Limelight marquee numerals,
-   Italiana romance, Special Elite telegrams, Josefin Sans labels.
-   Every colour is a token overwritten at runtime by main.js
-   applyTheme().
+   Cormorant Garamond headlines, Bodoni numerals, Great Vibes
+   script, Caveat notes, EB Garamond body. Every colour is a
+   token overwritten at runtime by main.js applyTheme().
    ═══════════════════════════════════════════════════════════════ */
 
 *,
@@ -25,7 +24,7 @@ body {
   color: var(--vellum-text);
   font-family: var(--font-body);
   font-size: 17px;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.8;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -44,9 +43,9 @@ a { color: inherit; }
   border-radius: 2px;
 }
 
-::selection { background: color-mix(in srgb, var(--champagne) 36%, transparent); color: var(--paper-raised); }
+::selection { background: color-mix(in srgb, var(--rose) 55%, transparent); color: var(--ink); }
 
-/* ═══ THE SUITE — the whole ballroom walk ════════════════════════ */
+/* ═══ THE SUITE — the whole garden walk ══════════════════════════ */
 
 .sheet {
   position: relative;
@@ -54,7 +53,7 @@ a { color: inherit; }
   margin: 0 auto;
   background:
     linear-gradient(180deg,
-      color-mix(in srgb, var(--night) 92%, var(--champagne) 1.5%) 0%,
+      color-mix(in srgb, var(--night) 96%, var(--rose) 4%) 0%,
       var(--night-deep) 100%);
 }
 
@@ -71,8 +70,8 @@ a { color: inherit; }
   color: var(--champagne-soft);
 }
 
-/* the eyebrow — a deco chapter mark: letterspaced caps with a
-   stepped diamond at each end */
+/* the eyebrow — letterspaced caps with a tiny leaf flourish at
+   each end */
 .kicker {
   display: inline-flex;
   align-items: center;
@@ -89,76 +88,74 @@ a { color: inherit; }
 .kicker::before,
 .kicker::after {
   content: "";
-  width: 8px;
-  height: 8px;
+  width: 14px;
+  height: 14px;
   flex: none;
-  border: 1px solid var(--gold-line);
-  rotate: 45deg;
-  background: var(--gold-ghost);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cg fill='none' stroke='%23B28A4E' stroke-opacity='.75' stroke-width='1'%3E%3Cpath d='M7 12 C 7 8 7 5 7 2'/%3E%3Cpath d='M7 9 C 4.6 8.6 3.4 7 3.2 5 C 5.4 5.2 6.7 6.4 7 8.6'/%3E%3Cpath d='M7 7.4 C 9.4 7 10.6 5.4 10.8 3.4 C 8.6 3.6 7.3 4.8 7 7'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 .kicker--center { margin-inline: auto; }
 .kicker--ink { color: var(--champagne-soft); }
-.kicker--ink::before,
-.kicker--ink::after { border-color: var(--line-strong); }
 .kicker--light { color: var(--gilding); }
 
-/* chapter display — pure deco geometry with an Italiana echo */
+/* chapter display — graceful serif with a script echo */
 .display {
   font-family: var(--font-editorial);
-  font-weight: 400;
+  font-weight: 500;
   font-size: clamp(2.3rem, 6vw, 3.7rem);
   line-height: 1.12;
-  color: var(--ivory);
-  letter-spacing: .06em;
+  color: var(--ink);
+  letter-spacing: .04em;
 }
 .display .script {
   display: inline-block;
-  font-size: .92em;
+  font-size: 1.04em;
   font-weight: 400;
-  letter-spacing: .04em;
-  color: var(--champagne);
+  letter-spacing: .02em;
+  color: var(--burgundy-deep);
 }
 
 .prose {
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 400;
   font-size: var(--fs-body);
   line-height: 2;
-  color: color-mix(in srgb, var(--ivory) 84%, transparent);
+  color: color-mix(in srgb, var(--ink) 84%, transparent);
 }
 
 .prose--dropcap::first-letter {
   font-family: var(--font-editorial);
-  font-weight: 400;
-  font-size: 2.75em;
+  font-weight: 500;
+  font-size: 2.9em;
   line-height: .92;
   float: left;
   padding: .05em .14em 0 0;
-  color: var(--champagne);
+  color: var(--burgundy-deep);
 }
 
 .hand {
   font-family: var(--font-hand);
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   letter-spacing: .02em;
-  color: var(--sage);
+  color: var(--olive-deep);
 }
 
-/* the foil numeral — beaten champagne leaf for grand dates */
+/* the foil numeral — beaten antique gold leaf for grand dates */
 .foil {
   background: linear-gradient(172deg,
-    color-mix(in srgb, var(--champagne) 58%, #F9E9BC) 10%,
-    color-mix(in srgb, var(--champagne) 80%, #FCEFC9) 34%,
+    color-mix(in srgb, var(--champagne) 58%, #E3C48B) 10%,
+    color-mix(in srgb, var(--champagne) 80%, #EDD7A6) 34%,
     var(--champagne) 56%,
-    color-mix(in srgb, var(--champagne-soft) 72%, #7A5C26) 88%);
+    color-mix(in srgb, var(--champagne-soft) 72%, #6E5324) 88%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-.small { font-size: .8rem; color: var(--sage); }
+.small { font-size: .8rem; color: var(--night-faint); }
 
-/* ═══ BUTTONS — deco tickets: stepped frames & gold plate ═══════ */
+/* ═══ BUTTONS — stationery plates: hairline frames & gold leaf ═ */
 
 .btn {
   position: relative;
@@ -167,12 +164,13 @@ a { color: inherit; }
   justify-content: center;
   gap: .6rem;
   padding: .95rem 1.9rem;
-  border-radius: 0;
+  border-radius: 999px;
   border: 1px solid var(--line);
   font-family: var(--font-ui);
-  font-size: .66rem;
+  font-size: .72rem;
   font-weight: 600;
   letter-spacing: .24em;
+  text-indent: .12em;
   text-transform: uppercase;
   text-decoration: none;
   background: transparent;
@@ -181,16 +179,12 @@ a { color: inherit; }
     background-color .25s var(--ease), color .25s var(--ease),
     border-color .25s var(--ease), filter .25s var(--ease);
 }
-/* the stepped deco shoulders */
 .btn::before {
   content: "";
   position: absolute;
   inset: 3px;
   border: 1px solid var(--gold-faint);
-  clip-path: polygon(0 0, 8px 0, 8px 3px, 3px 3px, 3px 8px, 0 8px,
-                     0 calc(100% - 8px), 3px calc(100% - 8px), 3px calc(100% - 3px), 8px calc(100% - 3px), 8px 100%,
-                     calc(100% - 8px) 100%, calc(100% - 8px) calc(100% - 3px), calc(100% - 3px) calc(100% - 3px), calc(100% - 3px) calc(100% - 8px),
-                     100% calc(100% - 8px), 100% 8px, calc(100% - 3px) 8px, calc(100% - 3px) 3px, calc(100% - 8px) 3px, calc(100% - 8px) 0);
+  border-radius: 999px;
   pointer-events: none;
   transition: border-color .25s var(--ease);
 }
@@ -207,30 +201,31 @@ a { color: inherit; }
   stroke-linejoin: round;
 }
 
-/* champagne plate — the gold-button of the ballroom */
+/* gold leaf plate — the gold-button of the Roseraie */
 .btn--gold {
-  color: #221A08;
+  color: var(--ivory);
   background: linear-gradient(168deg,
-    color-mix(in srgb, var(--champagne) 84%, #F9E9BC) 0%,
+    color-mix(in srgb, var(--champagne) 84%, #E8CD9C) 0%,
     var(--champagne) 52%,
-    color-mix(in srgb, var(--champagne-soft) 88%, #6E5427) 100%);
+    color-mix(in srgb, var(--champagne-soft) 88%, #6E5324) 100%);
   border-color: color-mix(in srgb, var(--champagne) 62%, transparent);
   font-weight: 600;
+  text-shadow: 0 1px 1px color-mix(in srgb, #5A4014 55%, transparent);
 }
-.btn--gold::before { border-color: color-mix(in srgb, #F6E7B8 38%, transparent); }
+.btn--gold::before { border-color: color-mix(in srgb, #F4E3BE 38%, transparent); }
 .btn--gold:hover { filter: brightness(1.07); }
 
 .btn--goldline {
-  color: var(--champagne);
+  color: var(--champagne-soft);
   background:
     linear-gradient(168deg,
-      color-mix(in srgb, var(--champagne) 16%, transparent) 0%,
+      color-mix(in srgb, var(--rose) 14%, transparent) 0%,
       transparent 60%),
     var(--glass-deep);
   border-color: color-mix(in srgb, var(--champagne) 55%, transparent);
 }
-.btn--goldline::before { border-color: color-mix(in srgb, var(--champagne) 38%, transparent); }
-.btn--goldline:hover { filter: brightness(1.1); border-color: var(--champagne); }
+.btn--goldline::before { border-color: color-mix(in srgb, var(--champagne) 32%, transparent); }
+.btn--goldline:hover { filter: brightness(1.03); border-color: var(--champagne); }
 
 .btn--ghost {
   color: inherit;
@@ -248,9 +243,9 @@ a { color: inherit; }
 .rule { stroke: var(--gold-line); fill: none; stroke-width: 1; }
 .dot-gold { fill: var(--champagne-soft); }
 .orn-dot { fill: var(--champagne-soft); }
-.petal { fill: color-mix(in srgb, var(--rose) 60%, transparent); }
+.petal { fill: color-mix(in srgb, var(--rose) 70%, transparent); }
 
-/* ═══ the chapter divider — a running chevron frieze ════════ */
+/* ═══ the chapter divider — a running rose-dot frieze ════════ */
 
 .deco-band {
   position: relative;
@@ -258,7 +253,7 @@ a { color: inherit; }
   height: 26px;
   margin: 0 auto;
   max-width: 380px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='26'%3E%3Cg fill='none' stroke='%23A5823C' stroke-opacity='.55'%3E%3Cpath d='M 20 12 L 26 7 L 32 12 L 26 17 Z'/%3E%3Cpath d='M 0 12 H 14'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='26'%3E%3Cg fill='none' stroke='%23B28A4E' stroke-opacity='.5' stroke-width='1'%3E%3Ccircle cx='22' cy='13' r='3.4'/%3E%3Ccircle cx='22' cy='13' r='1.2'/%3E%3Cpath d='M 3 13 Q 8 9 13 13'/%3E%3Cpath d='M 31 13 Q 36 17 41 13'/%3E%3C/g%3E%3C/svg%3E");
   background-repeat: repeat-x;
   background-position: center;
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 22%, #000 78%, transparent);
@@ -302,9 +297,18 @@ a { color: inherit; }
 .reveal.in-view { opacity: 1; transform: none; }
 .no-js .reveal { opacity: 1; transform: none; }
 
-/* while the seal holds, the ballroom waits behind the doors */
+/* while the seal holds, the garden waits behind the gates */
 body.intro-pending { overflow: hidden; height: 100dvh; }
 body.intro-pending #main-content { opacity: 0; pointer-events: none; }
+
+/* ═══ CUTOUT ART — shared rules for photographic florals ═══════ */
+
+.art {
+  display: block;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

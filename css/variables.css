@@ -1,88 +1,89 @@
 /* ═══════════════════════════════════════════════════════════════
-   MARQUEE · variables.css — the black-tie ballroom design system
+   THE ROSERAIE · variables.css — a blush & gold garden romance
    ---------------------------------------------------------------
-   Built from four materials of the jazz-age ballroom: polished
-   onyx lacquer, champagne gold foil, ivory vellum and platinum
-   light. Dark bands are lacquered onyx; light cards are vellum
-   floats with gilded frames. Every colour token is overwritten
-   at runtime by main.js applyTheme(); defaults mirror the onyx
-   (black & champagne) preset.
+   Built from four materials of the rose garden in June: warm
+   ivory paper, blush petal pink, antique champagne gold and
+   sage eucalyptus. Light cards float on ivory ground; gold
+   hairlines frame every plate. Every colour token is overwritten
+   at runtime by main.js applyTheme(); defaults mirror the
+   "Blush & Ivory" preset. Token NAMES are the stable contract —
+   never rename them here without updating main.js applyTheme().
    ═══════════════════════════════════════════════════════════════ */
 
 :root {
-  /* ── the onyx palette (black tie & champagne) ────────────────── */
-  --burgundy:      #C7A558;   /* champagne accent — primary accent   */
-  --burgundy-deep: #A8873F;   /* deep champagne                     */
-  --wine:          #181A1F;   /* graphite panel                    */
-  --crimson:       #F0E4C4;   /* pale champagne — light accent      */
-  --champagne:     #CBA85C;   /* champagne gold foil                */
-  --champagne-soft:#9C8248;   /* burnished antique gold              */
-  --parchment:     #E8DFC8;   /* aged vellum                         */
-  --ivory:         #F1EAD7;   /* ivory — headline light on onyx       */
-  --paper-raised:  #F5EFDF;   /* raised vellum card                  */
-  --night:         #131418;   /* graphite band                        */
-  --night-deep:    #0B0C0E;   /* deep graphite page ground            */
-  --olive:         #6A6E78;   /* platinum umber                       */
-  --olive-deep:    #54575F;
-  --sage:          #B4B8C2;   /* pale platinum                        */
-  --rose:          #D9C9A3;   /* antique gold wash                   */
-  --ink:           #1B1C20;   /* vellum ink (text on light cards)     */
-  --ink-soft:      #54565F;   /* soft vellum ink                      */
-  --charcoal:      #8B8E98;
+  /* ── the Roseraie palette (blush & ivory) ─────────────────────── */
+  --burgundy:      #C4858B;   /* dusty rose — primary rose accent    */
+  --burgundy-deep: #A96872;   /* rosewood — deep rose accent         */
+  --wine:          #F9EDE6;   /* blush panel (light)                 */
+  --crimson:       #F2E3C8;   /* champagne cream — light accent      */
+  --champagne:     #B28A4E;   /* antique gold foil                   */
+  --champagne-soft:#96703A;   /* burnished deep gold                 */
+  --parchment:     #F4E9D8;   /* aged paper                          */
+  --ivory:         #FDFAF3;   /* warm white — headline light          */
+  --paper-raised:  #FFFCF6;   /* raised ivory card                   */
+  --night:         #F6EDDF;   /* ivory band (page ground)            */
+  --night-deep:    #F1E6D6;   /* deeper ivory — page ground          */
+  --olive:         #7C8F78;   /* eucalyptus green                    */
+  --olive-deep:    #5F7460;   /* deep eucalyptus                     */
+  --sage:          #A9BBA3;   /* pale sage                           */
+  --rose:          #EBC3C0;   /* blush petal pink wash               */
+  --ink:           #46333B;   /* rosewood ink (text on light)        */
+  --ink-soft:      #7A6469;   /* soft rosewood ink                   */
+  --charcoal:      #9C8E92;   /* muted taupe-rose                    */
 
   /* ── derived golds ────────────────────────────────────────── */
   --gold:          var(--champagne);
-  --gold-bright:   color-mix(in srgb, var(--champagne) 62%, #F6E7B8);
-  --gold-dim:      color-mix(in srgb, var(--champagne) 58%, var(--night-deep) 14%);
-  --gold-line:     color-mix(in srgb, var(--champagne) 52%, transparent);
-  --gold-faint:    color-mix(in srgb, var(--champagne) 26%, transparent);
-  --gold-ghost:    color-mix(in srgb, var(--champagne) 13%, transparent);
+  --gold-bright:   color-mix(in srgb, var(--champagne) 55%, #D9B579);
+  --gold-dim:      color-mix(in srgb, var(--champagne) 62%, #6E5324);
+  --gold-line:     color-mix(in srgb, var(--champagne) 46%, transparent);
+  --gold-faint:    color-mix(in srgb, var(--champagne) 24%, transparent);
+  --gold-ghost:    color-mix(in srgb, var(--champagne) 12%, transparent);
 
-  /* ── vellum tones ─────────────────────────────────────────── */
-  --paper-line:    color-mix(in srgb, var(--champagne-soft) 50%, transparent);
-  --paper-wash:    color-mix(in srgb, var(--wine) 3%, var(--paper-raised));
+  /* ── paper tones ─────────────────────────────────────────── */
+  --paper-line:    color-mix(in srgb, var(--champagne-soft) 42%, transparent);
+  --paper-wash:    color-mix(in srgb, var(--rose) 7%, var(--paper-raised));
   --cream-deep:    color-mix(in srgb, var(--parchment) 62%, var(--ivory) 38%);
 
-  /* ── the ballroom's own derived tones — footlights at dusk ── */
+  /* ── the garden's own derived tones — June light ─────────── */
   --sky-1:         var(--night-deep);
-  --sky-2:         color-mix(in srgb, var(--night) 84%, var(--olive) 16%);
-  --glass:         color-mix(in srgb, var(--night) 55%, transparent);
-  --glass-deep:    color-mix(in srgb, var(--night-deep) 72%, transparent);
-  --glass-edge:    color-mix(in srgb, var(--champagne) 26%, transparent);
-  --gilding:       color-mix(in srgb, var(--champagne) 86%, white 14%);
-  --gilding-soft:  color-mix(in srgb, var(--champagne) 55%, transparent);
-  --sunset:        color-mix(in srgb, var(--ivory) 82%, var(--champagne) 18%);
-  --sunset-soft:   color-mix(in srgb, var(--ivory) 58%, transparent);
-  --night-ink:     color-mix(in srgb, var(--ivory) 76%, transparent);
-  --night-faint:   color-mix(in srgb, var(--ivory) 62%, transparent);
-  --ember:         color-mix(in srgb, var(--champagne) 40%, #F6E7B8 60%);
-  --lacquer-1:     #171310;
-  --lacquer-2:     #100D0A;
-  --vellum-text:   color-mix(in srgb, var(--ivory) 88%, transparent);
+  --sky-2:         color-mix(in srgb, var(--night) 88%, var(--olive) 12%);
+  --glass:         color-mix(in srgb, #FFFFFF 58%, transparent);
+  --glass-deep:    color-mix(in srgb, #FFFFFF 74%, transparent);
+  --glass-edge:    color-mix(in srgb, var(--champagne) 30%, transparent);
+  --gilding:       var(--champagne);
+  --gilding-soft:  color-mix(in srgb, var(--champagne-soft) 72%, transparent);
+  --sunset:        var(--ivory);
+  --sunset-soft:   color-mix(in srgb, var(--ink) 66%, transparent);
+  --night-ink:     color-mix(in srgb, var(--ink) 78%, transparent);
+  --night-faint:   color-mix(in srgb, var(--ink) 55%, transparent);
+  --ember:         color-mix(in srgb, var(--champagne) 34%, #F4E3BE 66%);
+  --lacquer-1:     #E9D2C9;
+  --lacquer-2:     #DFC3BC;
+  --vellum-text:   color-mix(in srgb, var(--ink) 88%, transparent);
 
-  /* ── luxury hardware — hairlines and soft shadow layers ───── */
-  --line:          color-mix(in srgb, var(--champagne) 44%, transparent);
-  --line-strong:   color-mix(in srgb, var(--champagne-soft) 72%, transparent);
-  --shadow-soft:   0 14px 40px -18px color-mix(in srgb, #000000 52%, transparent),
-                   0 4px 14px -8px color-mix(in srgb, #000000 34%, transparent);
-  --shadow-lift:   0 26px 60px -26px color-mix(in srgb, #000000 58%, transparent),
-                   0 8px 22px -12px color-mix(in srgb, #000000 38%, transparent);
+  /* ── luxury hardware — hairlines and soft warm shadows ───── */
+  --line:          color-mix(in srgb, var(--champagne) 40%, transparent);
+  --line-strong:   color-mix(in srgb, var(--champagne-soft) 62%, transparent);
+  --shadow-soft:   0 14px 38px -20px color-mix(in srgb, #6E5148 38%, transparent),
+                   0 4px 14px -8px color-mix(in srgb, #6E5148 22%, transparent);
+  --shadow-lift:   0 26px 56px -28px color-mix(in srgb, #6E5148 44%, transparent),
+                   0 8px 20px -12px color-mix(in srgb, #6E5148 26%, transparent);
   --shadow-card:   var(--shadow-lift);
-  --shadow-gold:   0 1px 0 rgba(255, 248, 224, .38) inset;
-  --shadow-seal:   0 4px 10px color-mix(in srgb, var(--champagne) 28%, transparent),
-                   0 14px 30px color-mix(in srgb, var(--champagne) 16%, transparent);
+  --shadow-gold:   0 1px 0 rgba(255, 252, 244, .5) inset;
+  --shadow-seal:   0 4px 10px color-mix(in srgb, var(--burgundy) 24%, transparent),
+                   0 14px 30px color-mix(in srgb, var(--burgundy) 14%, transparent);
 
   /* ── type ─────────────────────────────────────────────────
-     Poiret One — pure deco geometry for the great headlines ·
-     Limelight — the marquee numerals & monogram · Italiana —
-     the elegant hairline romance · Special Elite — telegram
-     marginalia · Josefin Sans — deco letterspaced labels.        */
-  --font-editorial: 'Poiret One', 'Cinzel', 'Georgia', serif;
-  --font-display:   'Limelight', 'Poiret One', 'Georgia', serif;
-  --font-script:    'Italiana', 'Poiret One', 'Georgia', serif;
-  --font-hand:      'Special Elite', 'Courier New', monospace;
-  --font-body:      'Josefin Sans', 'Jost', 'Trebuchet MS', sans-serif;
-  --font-ui:        'Josefin Sans', 'Jost', 'Trebuchet MS', sans-serif;
+     Cormorant Garamond — the elegant serif for headlines ·
+     Bodoni Moda — engraved numerals & monogram · Great Vibes —
+     the sweeping wedding script · Caveat — pencilled notes ·
+     EB Garamond — bookish body copy.                             */
+  --font-editorial: 'Cormorant Garamond', 'EB Garamond', 'Georgia', serif;
+  --font-display:   'Bodoni Moda', 'Cormorant Garamond', 'Georgia', serif;
+  --font-script:    'Great Vibes', 'Parisienne', cursive;
+  --font-hand:      'Caveat', 'Segoe Script', cursive;
+  --font-body:      'EB Garamond', 'Georgia', serif;
+  --font-ui:        'Cormorant Garamond', 'EB Garamond', 'Georgia', serif;
 
   /* ── flow of type sizes ───────────────────────────────────── */
   --fs-hero-names:  clamp(3.2rem, 10vw, 6.4rem);
@@ -101,5 +102,5 @@
   --speed:          .42s;
   --ease:           cubic-bezier(.22, .75, .3, 1);
 
-  color-scheme: dark;
+  color-scheme: light;
 }

@@ -1,9 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="8" fill="#0C0A08"/>
-  <g fill="none" stroke="#CBA85C" stroke-width="1.6">
-    <path d="M32 10 L52 32 L32 54 L12 32 Z"/>
-    <path d="M32 16 L46 32 L32 48 L18 32 Z" stroke-opacity=".45"/>
-    <path d="M22 6 h6 M42 6 h6 M22 58 h6 M42 58 h6 M6 22 v6 M6 42 v6 M58 22 v6 M58 42 v6" stroke-opacity=".7"/>
+  <rect width="64" height="64" rx="14" fill="#F6EDDF"/>
+  <g fill="none" stroke="#B28A4E" stroke-width="1.6">
+    <circle cx="32" cy="30" r="13"/>
+    <circle cx="32" cy="30" r="5.5"/>
+    <circle cx="32" cy="30" r="1.8" fill="#B28A4E" stroke="none"/>
+    <path d="M32 43 V54" stroke-opacity=".9"/>
+    <path d="M32 49 C 27 48.2 24.4 45.8 23.8 42.2" stroke-opacity=".8"/>
+    <path d="M32 46.6 C 37 45.8 39.6 43.4 40.2 39.8" stroke-opacity=".8"/>
+    <circle cx="14" cy="12" r="1.6" fill="#C4858B" stroke="none"/>
+    <circle cx="50" cy="12" r="1.6" fill="#C4858B" stroke="none"/>
+    <circle cx="14" cy="52" r="1.6" fill="#C4858B" stroke="none"/>
+    <circle cx="50" cy="52" r="1.6" fill="#C4858B" stroke="none"/>
   </g>
-  <circle cx="32" cy="32" r="3.4" fill="#CBA85C"/>
 </svg>
